@@ -14,7 +14,7 @@
 
 
 {%- macro render_cat_nav(active=none, tags_type=none) %}
-<h2>{{ tags_type }} Tags</h2>
+<h2>{{ tags_type }} tags</h2>
 <ul>
   {%- for tag in site.query("/tags").filter(F._id != "all") %}
     {%- set name = tag.name if tag.name else tag._id.title() %}
