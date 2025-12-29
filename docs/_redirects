@@ -25,7 +25,6 @@
 ##################                      #########   ######
 # Source                                # Target    # Code
 ##################                      #########   ######
-/xmrlpc.php                             /403.html   403
 /xmlrpc*                                /403.html   403
 /wp/*                                   /403.html   403
 /wp.php                                 /403.html   403
@@ -40,22 +39,25 @@
 /simple.php                             /403.html   403
 /postnews.php                           /403.html   403
 /phpunit*                               /403.html   403
+/phpinfo*                               /403.html   403
+/php-info*                              /403.html   403
 /old*                                   /403.html   403
 /new*                                   /403.html   403
 /moon.php                               /403.html   403
 /login*                                 /403.html   403
 /install.php                            /403.html   403
 /index.php                              /403.html   403
+/env*                                   /403.html   403
 /dropdown.php                           /403.html   403
 /content.php                            /403.html   403
 /chosen.php                             /403.html   403
-/cgi-bin/*                              /403.html   403
+/cgi-bin*                               /403.html   403
 /backup*                                /403.html   403
 /alfanew.php                            /403.html   403
 /admin*                                 /403.html   403
 /about.php                              /403.html   403
 /:dir/wp-includes*                      /403.html   403
-/:dir/.env                              /403.html   403
+/:dir/.env*                             /403.html   403
 /.well-known/pki-validation/about.php   /403.html   403
 /.well-known/acme-challenge/cloud.php   /403.html   403
 /.git*                                  /403.html   403
