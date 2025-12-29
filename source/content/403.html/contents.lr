@@ -1,5 +1,7 @@
 title: 403 Forbidden
 ---
+sitemap: false
+---
 body:
 
 <i class="fas fa-ban"></i> 403 Forbidden

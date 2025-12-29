@@ -1,0 +1,8 @@
+_model: none
+---
+_template: sitemap.xml
+---
+_discoverable: no
+--- <!-- disregard: vim syntax highlighting fix_ -->
+sitemap: false
+---

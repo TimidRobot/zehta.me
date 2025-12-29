@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- set pages = site.root.children.all() %}
+  {%- set pages = pages + site.query("/about").all() %}
+  {%- set pages = pages + site.query("/tags").all() %}
+  {%- set pages = pages|sort(attribute="path") %}
+  {%- for page in pages %}
+  {%- if page.sitemap %}
+  <url><loc>{{ page|url(external=true) }}</loc></url>
+  {%- endif %}
+  {%- endfor %}
+  <url><loc>https://zehta.me/</loc></url>
+</urlset>
