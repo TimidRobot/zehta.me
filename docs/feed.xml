@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - Timid Robot</title><link href="https://zehta.me/" rel="alternate"></link><link href="https://zehta.me/feed.xml" rel="self"></link><id>urn:uuid:b948e31a-813a-31cb-9b20-de5981631b5b</id><updated>2023-01-16T06:56:00Z</updated><author><name>Timid Robot Zehta</name></author><entry><title>Phandelver Probabilities</title><link href="https://zehta.me/2023/01/phandelver-probabilities/" rel="alternate"></link><updated>2023-01-16T06:56:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:bdb5438d-9225-3917-8b00-65b149cd0200</id><content type="html">&lt;p&gt;Let's use the Python programming language to explore some of the dice roll
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - Timid Robot</title><link href="https://zehta.me/" rel="alternate"/><link href="https://zehta.me/feed.xml" rel="self"/><id>urn:uuid:b948e31a-813a-31cb-9b20-de5981631b5b</id><updated>2023-01-16T06:56:00Z</updated><author><name>Timid Robot Zehta</name></author><entry><title>Phandelver Probabilities</title><link href="https://zehta.me/2023/01/phandelver-probabilities/" rel="alternate"/><updated>2023-01-16T06:56:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:bdb5438d-9225-3917-8b00-65b149cd0200</id><content type="html">&lt;p&gt;Let's use the Python programming language to explore some of the dice roll
 probabilities in a D&amp;amp;D 5e adventure. I personally find math easier to
 understand when it's expressed as Python code and I want to improve my
 familiarity with plotting (graphing) using the &lt;code&gt;matplotlib&lt;/code&gt; Python library.&lt;/p&gt;
@@ -8,13 +8,13 @@ adventure using the pregenerated characters (see &lt;strong&gt;Notes and Referen
 below).&lt;/p&gt;
 &lt;h3 id="python-imports-and-globals"&gt;Python Imports and Globals&lt;/h3&gt;&lt;p&gt;First we'll load the Python imports and globals:&lt;/p&gt;
 &lt;div class="hll"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Standard library&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;itertools&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;product&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;statistics&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;fmean&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;itertools&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;product&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;statistics&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;fmean&lt;/span&gt;
 
 &lt;span class="c1"&gt;# Third-party&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plot&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.ticker&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;ticker&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;plot&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;matplotlib.ticker&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;ticker&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;numpy&lt;/span&gt;
 
 &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;
 &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;use&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ggplot&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -34,7 +34,7 @@ divided by the total possible outcomes. For example&lt;/p&gt;
 &lt;h3 id="dice-numpy-arrays"&gt;Dice Numpy Arrays&lt;/h3&gt;&lt;p&gt;We can use the &lt;code&gt;numpy&lt;/code&gt; library to make things easier for ourselves. Its array
 objects work very nicely with plotting and we can quickly generate the range of
 numbers used by dice using its functions:&lt;/p&gt;
-&lt;div class="hll"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;dice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;formula&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="hll"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;dice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;formula&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;    Create numpy array from dice formula (example: 3d6 + 2)&lt;/span&gt;
 &lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
@@ -99,7 +99,7 @@ disadvantage&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="hll"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# d20 is defined above&lt;/span&gt;
 
 
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;annotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;probability&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;annotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;probability&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;white&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;    Annotate top of bar plot with exact probability percentage&lt;/span&gt;
 &lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
@@ -225,7 +225,7 @@ perception. Will they surprise everyone in the party?&lt;/p&gt;
 &lt;div class="hll"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# annotate(), d20, and normal_roll are defined above&lt;/span&gt;
 
 
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_success_chance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;modifier&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;get_success_chance&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;modifier&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;    Determine probibility of success for a given DC with a modifier d20 roll.&lt;/span&gt;
 &lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
@@ -739,7 +739,7 @@ owners.&lt;/p&gt;
 &lt;h2 id="source"&gt;Source&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/TimidRobot/dnd_probabilities"&gt;TimidRobot/dnd_probabilities&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Emotional Labor Revisited</title><link href="https://zehta.me/2022/07/emotional-labor-revisited/" rel="alternate"></link><updated>2022-07-09T19:32:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:8ae708e0-c6f1-3b89-b5fa-a1d34bdaf231</id><content type="html">&lt;p&gt;Back in 2015, I read an amazing document. It was a digest of a message thread
+</content></entry><entry><title>Emotional Labor Revisited</title><link href="https://zehta.me/2022/07/emotional-labor-revisited/" rel="alternate"/><updated>2022-07-09T19:32:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:8ae708e0-c6f1-3b89-b5fa-a1d34bdaf231</id><content type="html">&lt;p&gt;Back in 2015, I read an amazing document. It was a digest of a message thread
 about Emotional Labor. Before I was done I knew I wanted to share it with
 everyone I cared about.&lt;/p&gt;
 &lt;p&gt;To that end I collaborated with the creator of the digest to
@@ -823,7 +823,7 @@ Toast&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;2022 Nov 04&lt;/code&gt;: Added Article That Started It All and updated In the Media&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;2022 Aug 30&lt;/code&gt;: Added feedback&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Abandoning SaltStack?</title><link href="https://zehta.me/2022/03/abandoning-saltstack/" rel="alternate"></link><updated>2022-03-12T12:30:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:21a63321-9195-3291-af16-63cfb6da9a05</id><content type="html">&lt;p&gt;I really wanted to use SaltStack to configure my home Linux router. It would be
+</content></entry><entry><title>Abandoning SaltStack?</title><link href="https://zehta.me/2022/03/abandoning-saltstack/" rel="alternate"/><updated>2022-03-12T12:30:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:21a63321-9195-3291-af16-63cfb6da9a05</id><content type="html">&lt;p&gt;I really wanted to use SaltStack to configure my home Linux router. It would be
 wonderful to manage that infrastructure as code. Unfortunately, it does not
 seem tenable for me.&lt;/p&gt;
 &lt;h2 id="issues-at-home"&gt;Issues at Home&lt;/h2&gt;&lt;h3 id="does-not-support-python-3-8-on-macos"&gt;Does not support Python 3.8+ on macOS&lt;/h3&gt;&lt;p&gt;My goal was to be able to push configurations using &lt;code&gt;salt-ssh&lt;/code&gt; from my macOS
@@ -920,7 +920,7 @@ needs).&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Psychological Safety and the Unix Room</title><link href="https://zehta.me/2021/04/unix-room/" rel="alternate"></link><updated>2021-04-16T00:29:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:7a2106fd-8b6d-31ac-b5d4-47227c4e50ad</id><content type="html">&lt;p&gt;Ever since I first read it in 2004, the following quote has stuck with me. I've
+</content></entry><entry><title>Psychological Safety and the Unix Room</title><link href="https://zehta.me/2021/04/unix-room/" rel="alternate"/><updated>2021-04-16T00:29:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:7a2106fd-8b6d-31ac-b5d4-47227c4e50ad</id><content type="html">&lt;p&gt;Ever since I first read it in 2004, the following quote has stuck with me. I've
 added it almost every internal company wiki I've managed.&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;One odd detail that I think was vital to how the group [at Bell Labs]
 functioned was a result of the first Unix being run on a clunky minicomputer
@@ -963,7 +963,7 @@ to offer help and create positive feedback loops of excitement.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Rob_Pike"&gt;Rob Pike - Wikipedia&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Bell_Labs"&gt;Bell Labs - Wikipedia&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>International Date Format</title><link href="https://zehta.me/2021/04/int-date-format/" rel="alternate"></link><updated>2021-04-14T15:27:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:75de3384-e16c-328b-b08a-d2c40f7597fc</id><content type="html">&lt;h2 id="please-use-the-international-date-format"&gt;Please use the international date format&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Please consider using the international date format (ex. &lt;code&gt;2021-04-14&lt;/code&gt; or
+</content></entry><entry><title>International Date Format</title><link href="https://zehta.me/2021/04/int-date-format/" rel="alternate"/><updated>2021-04-14T15:27:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:75de3384-e16c-328b-b08a-d2c40f7597fc</id><content type="html">&lt;h2 id="please-use-the-international-date-format"&gt;Please use the international date format&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Please consider using the international date format (ex. &lt;code&gt;2021-04-14&lt;/code&gt; or
 &lt;code&gt;YYYY-MM-DD&lt;/code&gt;)&lt;/strong&gt; instead of a local date format (ex. &lt;code&gt;4/14/2021&lt;/code&gt; or
 &lt;code&gt;D/MM/YYYY&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;The international date format is not only unambiguous and easier
@@ -984,7 +984,7 @@ However, that standards body does not allow open access to the standards!&lt;/p&
 available (in addition to the descriptions in the Wikipedia article above).&lt;/p&gt;
 &lt;p&gt;The World Wide Web Consortium (W3C) discusses the pros and cons of the
 international date format here: &lt;a href="https://www.w3.org/International/questions/qa-date-format"&gt;Date formats&lt;/a&gt;.&lt;/p&gt;
-</content></entry><entry><title>Relationship Anarchy Worksheet</title><link href="https://zehta.me/2021/03/relp-anarchy-sheet/" rel="alternate"></link><updated>2021-03-21T19:47:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:0a8a7c52-d93e-3691-9920-fe02668d55cf</id><content type="html">&lt;p&gt;The &lt;a href="/2021/03/relp-anarchy-sheet/RelpAnarchySheet.pdf"&gt;RelpAnarchySheet.pdf&lt;/a&gt; (152 KB) is a worksheet
+</content></entry><entry><title>Relationship Anarchy Worksheet</title><link href="https://zehta.me/2021/03/relp-anarchy-sheet/" rel="alternate"/><updated>2021-03-21T19:47:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:0a8a7c52-d93e-3691-9920-fe02668d55cf</id><content type="html">&lt;p&gt;The &lt;a href="/2021/03/relp-anarchy-sheet/RelpAnarchySheet.pdf"&gt;RelpAnarchySheet.pdf&lt;/a&gt; (152 KB) is a worksheet
 designed with the goal of making relationship negotiatings more successful. I
 really liked the various Relationship Anarchy Smorgasbords, but I wanted a more
 interactive tool.&lt;/p&gt;
@@ -1023,7 +1023,7 @@ Advice&lt;/a&gt;, 2014-09-24&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Air Cleaning and Cat Safe Plants</title><link href="https://zehta.me/2020/09/cleaning-cat-safe-plants/" rel="alternate"></link><updated>2020-09-24T20:05:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:afe21c77-02ee-3b00-acd0-792891f2595b</id><content type="html">&lt;p&gt;I'm moving to a new apartment soon and it has a good number of windows with
+</content></entry><entry><title>Air Cleaning and Cat Safe Plants</title><link href="https://zehta.me/2020/09/cleaning-cat-safe-plants/" rel="alternate"/><updated>2020-09-24T20:05:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:afe21c77-02ee-3b00-acd0-792891f2595b</id><content type="html">&lt;p&gt;I'm moving to a new apartment soon and it has a good number of windows with
 lots of light. I'm excited to buy some plants and I wanted to know which ones
 are non-toxic to Mochi cat, have been shown to help clean the air, and are
 easier to acquire and care for.&lt;/p&gt;
@@ -1058,7 +1058,7 @@ easier to acquire and care for.&lt;/p&gt;
 &lt;li&gt;&lt;a href="/2020/09/cleaning-cat-safe-plants/Air_Cleaning_and_Cat_Safe_Plants.pdf"&gt;Air_Cleaning_and_Cat_Safe_Plants.pdf&lt;/a&gt;
 (110 KB)&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>NVMEe on Debian on AWS</title><link href="https://zehta.me/2020/04/nvmee-on-debian-on-aws/" rel="alternate"></link><updated>2020-04-03T15:06:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:0030e119-24a2-3085-a438-42663df3fa86</id><content type="html">&lt;h2 id="problem"&gt;Problem&lt;/h2&gt;&lt;p&gt;The current Creative Commons infrastructure buildouts use Debian GNU/Linux AWS
+</content></entry><entry><title>NVMEe on Debian on AWS</title><link href="https://zehta.me/2020/04/nvmee-on-debian-on-aws/" rel="alternate"/><updated>2020-04-03T15:06:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:0030e119-24a2-3085-a438-42663df3fa86</id><content type="html">&lt;h2 id="problem"&gt;Problem&lt;/h2&gt;&lt;p&gt;The current Creative Commons infrastructure buildouts use Debian GNU/Linux AWS
 EC2 instances with EBS volumes. Depending on chance (or race conditions), the
 mapping of block devices can be different from one host to another or between
 reboots.&lt;/p&gt;
@@ -1166,7 +1166,7 @@ of an Amazon EC2.&lt;/em&gt; (&lt;a href="https://aws.amazon.com/amazon-linux-am
 &lt;/ul&gt;
 &lt;h2 id="originally-published"&gt;Originally Published&lt;/h2&gt;&lt;p&gt;Originally published &lt;a href="https://opensource.creativecommons.org/blog/entries/2020-04-03-nvmee-on-debian-on-aws/" title="NVMEe on Debian on AWS — Creative Commons on GitHub"&gt;NVMEe on Debian on AWS — Creative Commons on
 GitHub&lt;/a&gt;.&lt;/p&gt;
-</content></entry><entry><title>Recommending a Friendly Space policy for Queering Wikipedia</title><link href="https://zehta.me/2019/12/recommending-a-policy/" rel="alternate"></link><updated>2019-12-26T13:37:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:b03bcf00-c378-3aca-bca9-14810f468721</id><content type="html">&lt;p&gt;For the &lt;a href="https://meta.wikimedia.org/wiki/Queering_Wikipedia"&gt;Queering Wikipedia Conference 2020&lt;/a&gt;, I recommend using the
+</content></entry><entry><title>Recommending a Friendly Space policy for Queering Wikipedia</title><link href="https://zehta.me/2019/12/recommending-a-policy/" rel="alternate"/><updated>2019-12-26T13:37:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:b03bcf00-c378-3aca-bca9-14810f468721</id><content type="html">&lt;p&gt;For the &lt;a href="https://meta.wikimedia.org/wiki/Queering_Wikipedia"&gt;Queering Wikipedia Conference 2020&lt;/a&gt;, I recommend using the
 &lt;a href="https://www.contributor-covenant.org/"&gt;Contributor Covenant&lt;/a&gt; with updated examples of unacceptable
 behavior.&lt;/p&gt;
 &lt;p&gt;While the &lt;a href="https://meta.wikimedia.org/wiki/Friendly_space_policies#General_friendly_space_policy_for_Wikimedia_events"&gt;General friendly space policy for Wikimedia events&lt;/a&gt; is
@@ -1252,7 +1252,7 @@ Covenant&lt;/a&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id="discussion"&gt;Discussion&lt;/h2&gt;&lt;p&gt;The Queering Wikipedia Conference 2020 Friendly Space Policy is discussed on
 the &lt;a href="https://meta.wikimedia.org/wiki/Talk%3AWikimedia_LGBT%2B#Friendly_space_policy_for_events"&gt;Talk:Wikimedia LGBT+ - Meta&lt;/a&gt; page.&lt;/p&gt;
-</content></entry><entry><title>New Website</title><link href="https://zehta.me/2019/12/new-website/" rel="alternate"></link><updated>2019-12-15T13:37:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:4910f4ff-0390-3d63-a081-cb7fbbea1997</id><content type="html">&lt;p&gt;I have a new website! It uses the &lt;a href="https://www.getlektor.com/"&gt;Lektor&lt;/a&gt; static site generator and is
+</content></entry><entry><title>New Website</title><link href="https://zehta.me/2019/12/new-website/" rel="alternate"/><updated>2019-12-15T13:37:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:4910f4ff-0390-3d63-a081-cb7fbbea1997</id><content type="html">&lt;p&gt;I have a new website! It uses the &lt;a href="https://www.getlektor.com/"&gt;Lektor&lt;/a&gt; static site generator and is
 hosted on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The source code for the website is in the &lt;a href="https://github.com/TimidRobot/zehta.me"&gt;TimidRobot/zehta.me&lt;/a&gt;
 repository. See the README there for additional context and links.&lt;/p&gt;
@@ -1289,7 +1289,7 @@ repository. See the README there for additional context and links.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;2020 Sep 24&lt;/code&gt;: Added &lt;code&gt;--DarkRoyal&lt;/code&gt; and removed &lt;code&gt;--PinkPlum&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;2019 Dec 22&lt;/code&gt;: Added &lt;code&gt;--PinkPlum&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Empowering Collaboration in the Commons</title><link href="https://zehta.me/2019/11/empowering-collaboration/" rel="alternate"></link><updated>2019-11-25T11:11:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:bdedc9ee-583f-3f2f-a785-9058f9cc317e</id><content type="html">&lt;p&gt;In the past few months I have been privileged to attend &lt;a href="https://wikimania.wikimedia.org/wiki/2019:Program"&gt;Wikimania
+</content></entry><entry><title>Empowering Collaboration in the Commons</title><link href="https://zehta.me/2019/11/empowering-collaboration/" rel="alternate"/><updated>2019-11-25T11:11:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:bdedc9ee-583f-3f2f-a785-9058f9cc317e</id><content type="html">&lt;p&gt;In the past few months I have been privileged to attend &lt;a href="https://wikimania.wikimedia.org/wiki/2019:Program"&gt;Wikimania
 2019&lt;/a&gt; and the Google Summer of Code &lt;a href="https://sites.google.com/view/gsoc-mentorsummit2019/home"&gt;2019 Mentor
 Summit&lt;/a&gt;. At these events I was overwhelmed with the amount of
 care and effort people are putting into their projects and communities.&lt;/p&gt;
@@ -1328,7 +1328,7 @@ underrepresented in FOSS (free and open source software)&lt;/li&gt;
 &lt;p&gt;Thank you to the community and the work you're doing &amp;lt;3&lt;/p&gt;
 &lt;h2 id="originally-published"&gt;Originally Published&lt;/h2&gt;&lt;p&gt;Originally published &lt;a href="https://opensource.creativecommons.org/blog/entries/2019-11-25-empowering-collaboration/"&gt;Empowering Collaboration in the Commons — Creative
 Commons on GitHub&lt;/a&gt;.&lt;/p&gt;
-</content></entry><entry><title>Host Classification with SaltStack</title><link href="https://zehta.me/2019/07/host-classification/" rel="alternate"></link><updated>2019-07-31T11:11:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:30cca409-610d-34a9-a056-0f5608df62c6</id><content type="html">&lt;p&gt;Within infrastructure as code, as with all programming, there is a goal to
+</content></entry><entry><title>Host Classification with SaltStack</title><link href="https://zehta.me/2019/07/host-classification/" rel="alternate"/><updated>2019-07-31T11:11:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:30cca409-610d-34a9-a056-0f5608df62c6</id><content type="html">&lt;p&gt;Within infrastructure as code, as with all programming, there is a goal to
 reduce redundancy as much as possible. With configuration management,
 duplicated configurations can quickly lead to confusion and unexpected states.
 One of the key ways to reduce configuration duplication is robust host
@@ -1384,7 +1384,7 @@ source.&lt;/p&gt;
 &lt;p&gt;This host classification is also documented within it: &lt;a href="https://github.com/creativecommons/sre-salt-prime/blob/master/docs/Host_Classification.md"&gt;sre-salt-prime/Host_Classification.md at master&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="originally-published"&gt;Originally Published&lt;/h2&gt;&lt;p&gt;Originally published &lt;a href="https://opensource.creativecommons.org/blog/entries/saltstack-host-classification/"&gt;Host Classification with SaltStack — Creative Commons on
 GitHub&lt;/a&gt;&lt;/p&gt;
-</content></entry><entry><title>Open Development with SaltStack</title><link href="https://zehta.me/2019/04/open-development/" rel="alternate"></link><updated>2019-04-17T11:11:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:0ec4777e-9c1b-301c-8c38-570963f44c2e</id><content type="html">&lt;p&gt;I am excited to publicize the open source repository for our SaltStack
+</content></entry><entry><title>Open Development with SaltStack</title><link href="https://zehta.me/2019/04/open-development/" rel="alternate"/><updated>2019-04-17T11:11:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:0ec4777e-9c1b-301c-8c38-570963f44c2e</id><content type="html">&lt;p&gt;I am excited to publicize the open source repository for our SaltStack
 configuration: &lt;a href="https://github.com/creativecommons/sre-salt-prime"&gt;creativecommons/sre-salt-prime&lt;/a&gt;. This is a
 rare offering. Not many configuration management system repositories are open
 sourced. Read on for why this is important to me :)&lt;/p&gt;
@@ -1428,7 +1428,7 @@ school, or work. I hope that my work in the open might lower the resources
 required to implement open source for others.&lt;/p&gt;
 &lt;h2 id="originally-published"&gt;Originally Published&lt;/h2&gt;&lt;p&gt;Originally published &lt;a href="https://opensource.creativecommons.org/blog/entries/open-development-with-saltstack/"&gt;Open Development with SaltStack — Creative Commons on
 GitHub&lt;/a&gt;.&lt;/p&gt;
-</content></entry><entry><title>In Support of Selfies</title><link href="https://zehta.me/2017/04/in-support-of-selfies/" rel="alternate"></link><updated>2017-04-26T08:55:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:d2cc025a-f6b1-35c8-9741-86ee79455b91</id><content type="html">&lt;p&gt;A collection of links in support of selfies:&lt;/p&gt;
+</content></entry><entry><title>In Support of Selfies</title><link href="https://zehta.me/2017/04/in-support-of-selfies/" rel="alternate"/><updated>2017-04-26T08:55:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:d2cc025a-f6b1-35c8-9741-86ee79455b91</id><content type="html">&lt;p&gt;A collection of links in support of selfies:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://youtu.be/VaVWvcuy3Cg" title="Kero Kero Bonito - Picture This – YouTube"&gt;Kero Kero Bonito - Picture This – YouTube&lt;/a&gt; (2015-03-10)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.bustle.com/articles/9421-feministselfie-reinforces-why-selfies-are-empowering" title="#FeministSelfie Reinforces Why Selfies Are Empowering"&gt;#FeministSelfie Reinforces Why Selfies Are Empowering&lt;/a&gt; (2013-11-21)&lt;/li&gt;
@@ -1440,14 +1440,14 @@ think&lt;/a&gt; (2015-07-23)&lt;/li&gt;
 (2015-10-12)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.sciencedaily.com/releases/2016/09/160913173436.htm" title="Study links selfies, happiness – ScienceDaily"&gt;Study links selfies, happiness – ScienceDaily&lt;/a&gt; (2016-09-13)&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Feelings Thermometer</title><link href="https://zehta.me/2016/12/feelings-thermometer/" rel="alternate"></link><updated>2016-12-11T14:12:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:bb3f70a5-d8a7-3c0f-9f2d-4f3957f934f8</id><content type="html">&lt;p&gt;I didn't like the Feelings Thermometer worksheet my therapist was using so I
+</content></entry><entry><title>Feelings Thermometer</title><link href="https://zehta.me/2016/12/feelings-thermometer/" rel="alternate"/><updated>2016-12-11T14:12:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:bb3f70a5-d8a7-3c0f-9f2d-4f3957f934f8</id><content type="html">&lt;p&gt;I didn't like the Feelings Thermometer worksheet my therapist was using so I
 created my own.&lt;/p&gt;
 &lt;p&gt;Here it is for your use (&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/"&gt;CC BY-SA 4.0&lt;/a&gt;):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://drive.google.com/open?id=0B0UUYL6kaNeBUlh3MXh2WG5PRjA"&gt;Feelings Thermometer (Word Document)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://drive.google.com/open?id=0B0UUYL6kaNeBVkY3RUZhZWM2MW8"&gt;Feelings Thermometer (PDF)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Emotional Labor</title><link href="https://zehta.me/2015/10/emotional-labor/" rel="alternate"></link><updated>2015-10-03T15:45:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:a18b5820-1c6e-3ca0-891a-b185b769a43e</id><content type="html">&lt;p&gt;&lt;strong&gt;(See updated post: &lt;a href="/2022/07/emotional-labor-revisited/"&gt;Emotional Labor Revisited&lt;/a&gt;.)&lt;/strong&gt;&lt;/p&gt;
+</content></entry><entry><title>Emotional Labor</title><link href="https://zehta.me/2015/10/emotional-labor/" rel="alternate"/><updated>2015-10-03T15:45:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:a18b5820-1c6e-3ca0-891a-b185b769a43e</id><content type="html">&lt;p&gt;&lt;strong&gt;(See updated post: &lt;a href="/2022/07/emotional-labor-revisited/"&gt;Emotional Labor Revisited&lt;/a&gt;.)&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;I recently read an amazing document. It was a digest of a message thread about
 Emotional Labor. Before I was done I knew I wanted to share it with everyone I
 cared about.&lt;/p&gt;
@@ -1459,8 +1459,8 @@ The MetaFilter Thread Condensed (PDF)&lt;/a&gt;.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;2022 Jul 18&lt;/code&gt;: added link to &lt;a href="/2022/07/emotional-labor-revisited/"&gt;Emotional Labor Revisited&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;2022 Apr 26&lt;/code&gt;: updated document URL after Google broke the the previous one&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Maybe It's Valvoline</title><link href="https://zehta.me/2015/06/maybe-its-valvoline/" rel="alternate"></link><updated>2015-06-09T22:17:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:db376a38-6129-3172-ae66-c83feb9f4733</id><content type="html">&lt;p&gt;&lt;img src="/2015/06/maybe-its-valvoline/furiosa_maybe_its_valvoline.png" alt="Maybe she&amp;#39;s borth with it--maybe it&amp;#39;s Valvoline" title="Maybe she&amp;#39;s borth with it--maybe it&amp;#39;s Valvoline"&gt;&lt;/p&gt;
-</content></entry><entry><title>Apple and Ubuntu OpenSSH Versions</title><link href="https://zehta.me/2015/02/apple-ubuntu-ssh/" rel="alternate"></link><updated>2015-02-24T09:08:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:14af2ada-c3bb-3612-be81-f2d18c949123</id><content type="html">&lt;p&gt;I use and support SSH every working day. I created these tables of OpenSSH
+</content></entry><entry><title>Maybe It's Valvoline</title><link href="https://zehta.me/2015/06/maybe-its-valvoline/" rel="alternate"/><updated>2015-06-09T22:17:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:db376a38-6129-3172-ae66-c83feb9f4733</id><content type="html">&lt;p&gt;&lt;img src="/2015/06/maybe-its-valvoline/furiosa_maybe_its_valvoline.png" alt="Maybe she&amp;#39;s borth with it--maybe it&amp;#39;s Valvoline" title="Maybe she&amp;#39;s borth with it--maybe it&amp;#39;s Valvoline"&gt;&lt;/p&gt;
+</content></entry><entry><title>Apple and Ubuntu OpenSSH Versions</title><link href="https://zehta.me/2015/02/apple-ubuntu-ssh/" rel="alternate"/><updated>2015-02-24T09:08:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:14af2ada-c3bb-3612-be81-f2d18c949123</id><content type="html">&lt;p&gt;I use and support SSH every working day. I created these tables of OpenSSH
 versions to make troubleshooting easier:&lt;/p&gt;
 &lt;h2 id="apple-macos/os-x"&gt;Apple macOS / OS X&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;&lt;tr&gt;
@@ -1568,7 +1568,7 @@ versions to make troubleshooting easier:&lt;/p&gt;
 &lt;h2 id="updates"&gt;Updates&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;this post has been updated in an effort to keep it current&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>SSH on iOS is abysmal</title><link href="https://zehta.me/2015/01/ssh-on-ios/" rel="alternate"></link><updated>2015-01-08T19:06:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:2309cc52-1ea2-32cf-8bbe-d1bcab1b14fa</id><content type="html">&lt;h2 id="application-summaries"&gt;Application Summaries&lt;/h2&gt;&lt;p&gt;I'm sorry if you're a SysAdmin with an iOS device. I have some bad news:&lt;/p&gt;
+</content></entry><entry><title>SSH on iOS is abysmal</title><link href="https://zehta.me/2015/01/ssh-on-ios/" rel="alternate"/><updated>2015-01-08T19:06:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:2309cc52-1ea2-32cf-8bbe-d1bcab1b14fa</id><content type="html">&lt;h2 id="application-summaries"&gt;Application Summaries&lt;/h2&gt;&lt;p&gt;I'm sorry if you're a SysAdmin with an iOS device. I have some bad news:&lt;/p&gt;
 &lt;h3 id="issh"&gt;iSSH&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Version: 5.7.1&lt;/li&gt;
 &lt;li&gt;Two factor: Yes!&lt;/li&gt;
@@ -1601,7 +1601,7 @@ impossible&lt;/li&gt;
 important in a platform (phones and tablets) that are so easy to misplace.&lt;/p&gt;
 &lt;h3 id="proxycommand"&gt;ProxyCommand&lt;/h3&gt;&lt;p&gt;ProxyCommand is a SSH option that allows the easy use of bastion hosts. Making
 increased security easier is a huge win. For an example, see cmc: Workflow.&lt;/p&gt;
-</content></entry><entry><title>Color Coded iTerm2 Windows</title><link href="https://zehta.me/2014/11/painted-iterm/" rel="alternate"></link><updated>2014-11-03T21:05:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:5630f6cc-182f-3b82-8798-0d6781be99bb</id><content type="html">&lt;p&gt;As a systems administrator, I often have many many terminal windows open. To
+</content></entry><entry><title>Color Coded iTerm2 Windows</title><link href="https://zehta.me/2014/11/painted-iterm/" rel="alternate"/><updated>2014-11-03T21:05:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:5630f6cc-182f-3b82-8798-0d6781be99bb</id><content type="html">&lt;p&gt;As a systems administrator, I often have many many terminal windows open. To
 help ensure I am fully aware of which of them are on Production hosts, I color
 code them.&lt;/p&gt;
 &lt;p&gt;I have finally taken that bit of helpful code and made it as easy for you, dear
@@ -1616,7 +1616,7 @@ reader, to use: &lt;a href="https://github.com/TimidRobot/painted-iterm"&gt;Timi
 &lt;/li&gt;
 &lt;li&gt;SSH LocalCommand&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Star Wars: Edge of the Empire Dice Probabilities</title><link href="https://zehta.me/2014/04/empire-dice/" rel="alternate"></link><updated>2014-04-02T16:09:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:9565a6e7-7ed4-3d32-a89b-dfaeea2c4e1c</id><content type="html">&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;&lt;p&gt;Each of the graphs below was created by simulating 100,000 dice rolls for each
+</content></entry><entry><title>Star Wars: Edge of the Empire Dice Probabilities</title><link href="https://zehta.me/2014/04/empire-dice/" rel="alternate"/><updated>2014-04-02T16:09:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:9565a6e7-7ed4-3d32-a89b-dfaeea2c4e1c</id><content type="html">&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;&lt;p&gt;Each of the graphs below was created by simulating 100,000 dice rolls for each
 die in each graph (400,000 to 900,000 rolls per graph and 6,000,000 total
 rolls). The work was inspired by &lt;a href="http://rpg-design.wikidot.com/evaluation"&gt;A Treatise on Different Dice-rolling
 Mechanics in RPGs&lt;/a&gt;.  The graphs were created using &lt;a href="https://github.com/TimidRobot/rpgdice"&gt;TimidRobot/rpgdice
@@ -1637,7 +1637,7 @@ the left of zero to maintain its sinister meaning.&lt;/p&gt;
 &lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote07_pro_pc_vs_hard_difficulty.png#vatexttop" alt="Graph: Pro PC vs Hard Difficulty" title="Graph: Pro PC vs Hard Difficulty"&gt;&lt;/li&gt;
 &lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote08_pro_pc_vs_advesary_npc.png#vatexttop" alt="Graph: Pro PC vs Advesary NPC" title="Graph: Pro PC vs Advesary NPC"&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</content></entry><entry><title>Troubleshooting collectd / statsd / Graphite</title><link href="https://zehta.me/2014/03/trouble-metrics/" rel="alternate"></link><updated>2014-03-31T16:09:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:8ae0c29f-0577-3cbe-bb9d-3696d1ac9372</id><content type="html">&lt;p&gt;Troubleshooting &lt;a href="http://graphite.readthedocs.org/en/latest/"&gt;Graphite&lt;/a&gt; can be a bother. Determining where a
+</content></entry><entry><title>Troubleshooting collectd / statsd / Graphite</title><link href="https://zehta.me/2014/03/trouble-metrics/" rel="alternate"/><updated>2014-03-31T16:09:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:8ae0c29f-0577-3cbe-bb9d-3696d1ac9372</id><content type="html">&lt;p&gt;Troubleshooting &lt;a href="http://graphite.readthedocs.org/en/latest/"&gt;Graphite&lt;/a&gt; can be a bother. Determining where a
 problem lies requires verification of the data at all of the points of
 communication. The best tool I've found for this is ngrep:&lt;/p&gt;
 &lt;div class="hll"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;ngrep&lt;span class="w"&gt; &lt;/span&gt;-lqd&lt;span class="w"&gt; &lt;/span&gt;any&lt;span class="w"&gt; &lt;/span&gt;ping&lt;span class="w"&gt; &lt;/span&gt;tcp&lt;span class="w"&gt; &lt;/span&gt;dst&lt;span class="w"&gt; &lt;/span&gt;port&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2003&lt;/span&gt;
@@ -1653,7 +1653,7 @@ statsd listener, from carbon-aggregator to carbon-cache, etc.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://manpages.ubuntu.com/manpages/precise/en/man8/ngrep.8.html"&gt;man 8 ngrep&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Dungeon World Dice Probabilities</title><link href="https://zehta.me/2014/03/dungeon-dice/" rel="alternate"></link><updated>2014-03-30T23:16:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:ead09fb1-37f5-3e71-b38f-c3ef041ad628</id><content type="html">&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;&lt;p&gt;Each of the graphs below was created by simulating 100,000 dice rolls per
+</content></entry><entry><title>Dungeon World Dice Probabilities</title><link href="https://zehta.me/2014/03/dungeon-dice/" rel="alternate"/><updated>2014-03-30T23:16:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:ead09fb1-37f5-3e71-b38f-c3ef041ad628</id><content type="html">&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;&lt;p&gt;Each of the graphs below was created by simulating 100,000 dice rolls per
 Ability Score (500,000 rolls per graph and 1,500,000 total rolls). The work was
 inspired by &lt;a href="http://rpg-design.wikidot.com/evaluation"&gt;A Treatise on Different Dice-rolling Mechanics in RPGs&lt;/a&gt;.
 The graphs were created using &lt;a href="https://github.com/TimidRobot/rpgdice"&gt;TimidRobot/rpgdice · GitHub&lt;/a&gt;.&lt;/p&gt;
@@ -1665,7 +1665,7 @@ The graphs were created using &lt;a href="https://github.com/TimidRobot/rpgdice"
 &lt;h2 id="updates"&gt;Updates&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;2014 Apr 01&lt;/code&gt;: updated graph labels&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>RPG Dice</title><link href="https://zehta.me/2014/03/rpg-dice/" rel="alternate"></link><updated>2014-03-30T23:09:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:048bf283-de63-3196-a9d8-9e0d5eb09a52</id><content type="html">&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;&lt;p&gt;I wrote a Python program that simulates different RPG dice mechanics (rulesets)
+</content></entry><entry><title>RPG Dice</title><link href="https://zehta.me/2014/03/rpg-dice/" rel="alternate"/><updated>2014-03-30T23:09:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:048bf283-de63-3196-a9d8-9e0d5eb09a52</id><content type="html">&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;&lt;p&gt;I wrote a Python program that simulates different RPG dice mechanics (rulesets)
 and creates graphs showing the probability of the different outcomes:
 &lt;a href="https://github.com/TimidRobot/rpgdice"&gt;TimidRobot/rpgdice · GitHub&lt;/a&gt;!&lt;/p&gt;
 &lt;h2 id="matplotlib-install"&gt;matplotlib install&lt;/h2&gt;&lt;p&gt;matplotlib is super painful to install on macOS Mavericks 10.9.2. I ended up
@@ -1674,7 +1674,7 @@ with debugging the mess and allowing me to reliably reproduce success.&lt;/p&gt;
 &lt;h2 id="ggplot"&gt;ggplot&lt;/h2&gt;&lt;p&gt;This project was the first time I've worked with &lt;a href="https://github.com/yhat/ggplot/"&gt;ggplot&lt;/a&gt;. I'm very
 glad for the shortcuts it provided. I would love to see it become more well
 known and successful.&lt;/p&gt;
-</content></entry><entry><title>Dungeon World Monster Cards</title><link href="https://zehta.me/2014/02/monster-cards/" rel="alternate"></link><updated>2014-02-27T20:33:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:2dbf26bb-d7c5-35ed-a0a2-62038fe634b8</id><content type="html">&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;&lt;p&gt;I wrote a Python program that allows the generation of &lt;a href="http://www.dungeon-world.com/"&gt;Dungeon World&lt;/a&gt;
+</content></entry><entry><title>Dungeon World Monster Cards</title><link href="https://zehta.me/2014/02/monster-cards/" rel="alternate"/><updated>2014-02-27T20:33:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:2dbf26bb-d7c5-35ed-a0a2-62038fe634b8</id><content type="html">&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;&lt;p&gt;I wrote a Python program that allows the generation of &lt;a href="http://www.dungeon-world.com/"&gt;Dungeon World&lt;/a&gt;
 Monster Cards. They can be made from the source files containing the Dungeon
 World monsters or from custom YAML files.&lt;/p&gt;
 &lt;p&gt;I am pleased with the outcome. The formatting does not match the Dungeon World
@@ -1689,7 +1689,7 @@ layout.  Overall my experience was very positive.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://raw.github.com/TimidRobot/dw-monster-cards/main/back_example.pdf"&gt;back_example.pdf&lt;/a&gt; (PDF, 1 page)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/TimidRobot/dw-monster-cards"&gt;TimidRobot/dw-monster-cards&lt;/a&gt; (project on GitHub)&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Go to Bed</title><link href="https://zehta.me/2013/01/go-to-bed/" rel="alternate"></link><updated>2013-01-02T09:41:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:9c86aef9-0b8e-3f0f-a6c4-02dda1dccbfe</id><content type="html">&lt;p&gt;One of my own troubleshooting or programming rules is to go to bed. Over and
+</content></entry><entry><title>Go to Bed</title><link href="https://zehta.me/2013/01/go-to-bed/" rel="alternate"/><updated>2013-01-02T09:41:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:9c86aef9-0b8e-3f0f-a6c4-02dda1dccbfe</id><content type="html">&lt;p&gt;One of my own troubleshooting or programming rules is to go to bed. Over and
 over again, I have discovered that I will fail to solve a problem if I focus
 too stubbornly on it. If I go to bed, however, the answer is usually waiting
 for me as soon as I wake up or pick up the problem again.&lt;/p&gt;
@@ -1700,7 +1700,7 @@ from &lt;a href="http://www.schneier.com/blog/archives/2013/01/apollo_robbins.ht
 &lt;blockquote&gt;&lt;p&gt;"inattentional blindness," the phenomenon of focussing so intently on a
 single task that one fails to notice things in plain sight.&lt;/p&gt;
 &lt;/blockquote&gt;
-</content></entry><entry><title>Mystery Writes</title><link href="https://zehta.me/2012/11/mystery-writes/" rel="alternate"></link><updated>2012-11-01T13:28:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:953f43a0-3f1b-3ea5-82f1-d040ac592306</id><content type="html">&lt;p&gt;We recently observed constant write activity on our development server, while
+</content></entry><entry><title>Mystery Writes</title><link href="https://zehta.me/2012/11/mystery-writes/" rel="alternate"/><updated>2012-11-01T13:28:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:953f43a0-3f1b-3ea5-82f1-d040ac592306</id><content type="html">&lt;p&gt;We recently observed constant write activity on our development server, while
 watching dstat. With the help of &lt;code&gt;iotop&lt;/code&gt; (&lt;a href="http://guichaz.free.fr/iotop/"&gt;iotop&lt;/a&gt;), we identified the
 Apache web server was the culprit.&lt;/p&gt;
 &lt;p&gt;But why would apache be doing so many writes? That's not normal behaviori
@@ -1726,7 +1726,7 @@ statistics&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://manpages.ubuntu.com/manpages/focal/en/man8/iotop.8.html"&gt;man 1 iotop&lt;/a&gt; - simple top-like I/O monitor&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://manpages.ubuntu.com/manpages/focal/man2/open.2.html"&gt;man 2 open&lt;/a&gt; - open and possibly create a file or device&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>The Automation of Networks of Networks</title><link href="https://zehta.me/2012/10/automation-of-nets/" rel="alternate"></link><updated>2012-10-10T12:58:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:4e16ae25-be49-3af1-ab78-57ae2367730f</id><content type="html">&lt;p&gt;For me, at least, systems administration is a difficult field to define and
+</content></entry><entry><title>The Automation of Networks of Networks</title><link href="https://zehta.me/2012/10/automation-of-nets/" rel="alternate"/><updated>2012-10-10T12:58:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:4e16ae25-be49-3af1-ab78-57ae2367730f</id><content type="html">&lt;p&gt;For me, at least, systems administration is a difficult field to define and
 talk about--especially succinctly. A couple of excellent blog posts suggest the
 following definition for Systems Administration: &lt;strong&gt;the automation of networks
 of networks.&lt;/strong&gt;&lt;/p&gt;
@@ -1752,7 +1752,7 @@ that kills thousands of people.&lt;/p&gt;
 The Insecurity of Networks&lt;/a&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The concept of networks of networks also servers to differentiate system administrators from programmers (not 100% accurate, but helpful none-the-less).&lt;/p&gt;
-</content></entry><entry><title>Isolating SSD Firmware Issue</title><link href="https://zehta.me/2012/10/isolating-ssd/" rel="alternate"></link><updated>2012-10-03T16:10:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:d9df97ba-964a-3361-becb-93308a5f5544</id><content type="html">&lt;p&gt;On Friday 2012-09-28, my MacBook Pro started freezing. There had been no
+</content></entry><entry><title>Isolating SSD Firmware Issue</title><link href="https://zehta.me/2012/10/isolating-ssd/" rel="alternate"/><updated>2012-10-03T16:10:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:d9df97ba-964a-3361-becb-93308a5f5544</id><content type="html">&lt;p&gt;On Friday 2012-09-28, my MacBook Pro started freezing. There had been no
 significant software updates that morning (though 10.8.2 came out that week).&lt;/p&gt;
 &lt;p&gt;I didn't want to deal with it, so I took it to the Apple Store. Unfortunately,
 they simply wasted a few days (given the solution found, I'm confident they
@@ -1776,10 +1776,10 @@ issue!&lt;/p&gt;
 affected.&lt;/p&gt;
 &lt;p&gt;Also, I can't overemphasis this post: &lt;a href="http://everythingsysadmin.com/2012/09/seniorsysadmins.html"&gt;Everything Sysadmin: What makes a
 sysadmin a "senior sysadmin"?&lt;/a&gt;&lt;/p&gt;
-</content></entry><entry><title>Linux TCP/IP Tuning</title><link href="https://zehta.me/2012/10/linux-tcp-ip/" rel="alternate"></link><updated>2012-10-03T15:32:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:f5fe181f-a948-305f-8e5f-7ef768c19a58</id><content type="html">&lt;p&gt;There is a lot of interesting information in this article and related comments:
+</content></entry><entry><title>Linux TCP/IP Tuning</title><link href="https://zehta.me/2012/10/linux-tcp-ip/" rel="alternate"/><updated>2012-10-03T15:32:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:f5fe181f-a948-305f-8e5f-7ef768c19a58</id><content type="html">&lt;p&gt;There is a lot of interesting information in this article and related comments:
 &lt;a href="http://news.ycombinator.com/item?id=4582253"&gt;Linux TCP/IP Tuning | Hacker News&lt;/a&gt;. I look forward to eventually having
 systems that benefit from that granularity of tuning.&lt;/p&gt;
-</content></entry><entry><title>To Err iz Human</title><link href="https://zehta.me/2012/09/to-err-iz/" rel="alternate"></link><updated>2012-09-28T12:13:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:86d9c745-b8dd-349a-9af7-8c8d8b99ae0b</id><content type="html">&lt;p&gt;Two articles highlight the potent benefits of errors in AI:&lt;/p&gt;
+</content></entry><entry><title>To Err iz Human</title><link href="https://zehta.me/2012/09/to-err-iz/" rel="alternate"/><updated>2012-09-28T12:13:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:86d9c745-b8dd-349a-9af7-8c8d8b99ae0b</id><content type="html">&lt;p&gt;Two articles highlight the potent benefits of errors in AI:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;del&gt;Nate Silver’s ‘The Signal and the Noise’&lt;/del&gt;&lt;ul&gt;
 &lt;li&gt;(link broken: &lt;code&gt;http://www.washingtonpost.com/blogs/ezra-klein/wp/2012/09/26/nate-silvers-the-signal-and-the-noise&lt;/code&gt;)&lt;/li&gt;
@@ -1788,7 +1788,7 @@ systems that benefit from that granularity of tuning.&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://www.eurekalert.org/pub_releases/2012-09/uota-aig092612.php"&gt;Artificially intelligent game bots pass the Turing test on Turing's
 centenary&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Name Change</title><link href="https://zehta.me/2012/09/name-change/" rel="alternate"></link><updated>2012-09-12T08:36:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:8d5f3434-86ae-36d8-8a39-7c32df2137a4</id><content type="html">&lt;p&gt;My legal name, &lt;strong&gt;Timid Robot&lt;/strong&gt; Zehta, was chosen by me and changed via court
+</content></entry><entry><title>Name Change</title><link href="https://zehta.me/2012/09/name-change/" rel="alternate"/><updated>2012-09-12T08:36:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:8d5f3434-86ae-36d8-8a39-7c32df2137a4</id><content type="html">&lt;p&gt;My legal name, &lt;strong&gt;Timid Robot&lt;/strong&gt; Zehta, was chosen by me and changed via court
 order.&lt;/p&gt;
 &lt;h2 id="faq"&gt;FAQ&lt;/h2&gt;&lt;h3 id="q-what-do-you-prefer-to-be-called"&gt;Q. What do you prefer to be called?&lt;/h3&gt;&lt;p&gt;Please call me by my nickname (my first and middle name):&lt;/p&gt;
 &lt;ul&gt;
@@ -1830,7 +1830,7 @@ resold at a high cost).&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;2024 Nov 05&lt;/code&gt;: updated pronouns&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;2022 Mar 16&lt;/code&gt;: revised answers&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Reminder</title><link href="https://zehta.me/2002/04/reminder/" rel="alternate"></link><updated>2002-04-04T22:22:22Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:650846e8-feff-3f97-826d-924e1e2a74a7</id><content type="html">&lt;p&gt;&lt;strong&gt;Tim Wheeler. &lt;em&gt;Reminder.&lt;/em&gt; 4 April - 11 April 2002&lt;/strong&gt;
+</content></entry><entry><title>Reminder</title><link href="https://zehta.me/2002/04/reminder/" rel="alternate"/><updated>2002-04-04T22:22:22Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:650846e8-feff-3f97-826d-924e1e2a74a7</id><content type="html">&lt;p&gt;&lt;strong&gt;Tim Wheeler. &lt;em&gt;Reminder.&lt;/em&gt; 4 April - 11 April 2002&lt;/strong&gt;
 &lt;br&gt;&lt;strong&gt;Steel, 41 x 37 x 16 inches&lt;/strong&gt;
 &lt;br&gt;&lt;strong&gt;North Side of Westlands Building, Sarah Lawrence College&lt;/strong&gt;&lt;br&gt;
 &lt;img src="/2002/04/reminder/side_back_installed.jpg#floatright" alt="Metal skeleton reminder" title="Metal skeleton reminder"&gt;&lt;/p&gt;
@@ -1888,7 +1888,7 @@ Publications Year | 1999&lt;/a&gt;.&lt;/li&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a name="fnote2"&gt;(2)&lt;/a&gt; See &lt;a href="/2002/02/name-tags/"&gt;Name Tags&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Name Tags</title><link href="https://zehta.me/2002/02/name-tags/" rel="alternate"></link><updated>2002-02-22T22:22:22Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:78715191-b090-3e9e-8f6e-8caf22b3b47d</id><content type="html">&lt;p&gt;&lt;strong&gt;Tim Wheeler. &lt;em&gt;Name Tags.&lt;/em&gt; 1999 Aug - 2002 Feb&lt;/strong&gt;
+</content></entry><entry><title>Name Tags</title><link href="https://zehta.me/2002/02/name-tags/" rel="alternate"/><updated>2002-02-22T22:22:22Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:78715191-b090-3e9e-8f6e-8caf22b3b47d</id><content type="html">&lt;p&gt;&lt;strong&gt;Tim Wheeler. &lt;em&gt;Name Tags.&lt;/em&gt; 1999 Aug - 2002 Feb&lt;/strong&gt;
 &lt;br&gt;&lt;strong&gt;2 Purchased Plastic Name Tags&lt;/strong&gt;&lt;br&gt;
 &lt;img src="/2002/02/name-tags/nametags.jpg#floatright" alt="Tim Wheeler Name Tags" title="Tim Wheeler Name Tags"&gt;&lt;/p&gt;
 &lt;p&gt;These name tags are the objects of a performance piece performed daily over two
@@ -1910,7 +1910,7 @@ with me--the extent to which they formed my identity as it was perceived by
 others. There were times when I wasn’t wearing them that people would talk and
 point as if I had one on. It took months for people I saw every week (or more)
 to realize that I was no longer wearing them.&lt;/p&gt;
-</content></entry><entry><title>Jazz Dance</title><link href="https://zehta.me/1998/10/jazz-dance/" rel="alternate"></link><updated>1998-10-22T13:45:00Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:f4be61a6-3784-32d8-8109-99dfefd9cabe</id><content type="html">&lt;pre&gt;&lt;code&gt;As I watched, the upright bassists hands,
+</content></entry><entry><title>Jazz Dance</title><link href="https://zehta.me/1998/10/jazz-dance/" rel="alternate"/><updated>1998-10-22T13:45:00Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:f4be61a6-3784-32d8-8109-99dfefd9cabe</id><content type="html">&lt;pre&gt;&lt;code&gt;As I watched, the upright bassists hands,
 Became spiders jumping on silken strands.
 The bassist told a primitive tale
 That was interrupted by the trumpets wail.
@@ -1947,7 +1947,7 @@ But to sway and stomp some more.
 So we happily stomped and swayed.
 We danced as the jazz band played!
 &lt;/code&gt;&lt;/pre&gt;
-</content></entry><entry><title>Will Work for Tuition</title><link href="https://zehta.me/1998/08/will-work-for-tuition/" rel="alternate"></link><updated>1998-08-18T22:22:22Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:e6174210-1c62-3f25-8d83-5247937efa2b</id><content type="html">&lt;p&gt;&lt;strong&gt;Tim Wheeler. &lt;em&gt;Will Work for Tuition.&lt;/em&gt; 1998 August&lt;/strong&gt;
+</content></entry><entry><title>Will Work for Tuition</title><link href="https://zehta.me/1998/08/will-work-for-tuition/" rel="alternate"/><updated>1998-08-18T22:22:22Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:e6174210-1c62-3f25-8d83-5247937efa2b</id><content type="html">&lt;p&gt;&lt;strong&gt;Tim Wheeler. &lt;em&gt;Will Work for Tuition.&lt;/em&gt; 1998 August&lt;/strong&gt;
 &lt;br&gt;&lt;strong&gt;Two hours panhandling with a borrowed briefcase and tie&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="/1998/08/will-work-for-tuition/panhandling.jpg" alt="Panhandling Collage" title="Panhandling Collage"&gt;&lt;/p&gt;
 &lt;p&gt;My first dollar made while panhandling outside the Los Angeles courthouse. I
