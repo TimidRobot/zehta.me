@@ -28,23 +28,26 @@ body:
   - Provide technical guidance to organizational leadership
   - Cultivate a culture of psychological safety, curiosity, collaboration, and
     care that pursues positive change
-  - Work to minimize risks and ensure business continuity (ex. change
-    management, backup policies, security policies)
+  - Work to minimize risks and ensure business continuity (change management,
+    backup policies, security policies)
 - Python Development
-  - Develop applications and integrations (Django, Python)
-  - Champion Python and guide its use at CC (ex. best practices, packaging,
+  - Develop applications and integrations (Django, MariaDB, PostgreSQL, Python,
+    SQLite)
+  - Champion Python and guide its use at CC (best practices, packaging,
     style guide)
   - Maintain a working knowledge of other programming languages in use at CC
-    (ex. Bash, JavaScript, PHP)
+    (Bash, JavaScript, PHP)
   - Improve our code quality through automation, code reviews, and unit tests
-  - Deploy and manage infrastructure as code (IaC) (ex. Docker, GitHub Actions)
+  - Deploy and manage infrastructure as code (IaC) (ex. Ansible, AWS, Docker,
+    GitHub Actions, Heroku, Linux, SaltStack)
 - Project Management and Collaboration
-  - Manage key projects (ex. CC Legal DB, CC Legal Tools, Quantifying the
+  - Manage key projects (CC Legal DB, CC Legal Tools, Quantifying the
     Commons)
-  - Participate in oncall rotation
-  - Provide support (ex. GitHub Pull Request reviews) and coverage for team
+  - Participate in oncall rotation (UptimeRobot, PagerDuty)
+  - Provide support (GitHub Pull Request reviews) and coverage for team
     members
-  - Mentor work program contributors (ex. Google Summer of Code, Outreachy)
+  - Mentor work program contributors (Google Summer of Code, Outreachy, various
+    university programs)
   - Champion working transparently in the open and contributing to a welcoming
     and supportive community
   - Champion free/libre and open source software (FOSS)
@@ -57,11 +60,12 @@ body:
 `2018 Oct - 2022 Apr`, **[Creative Commons (CC)][cc]**, Full-Time Remote
 
 - Systems Administration / Site Reliability Engineering
-  - Backend Programming and Application Support (Bash, Python)
+  - Backend Programming and Application Support (Apache2, Bash, MariaDB, NGINX,
+    Python)
   - Cloud Administration (Amazon Web Services [AWS])
   - GNU/Linux and Service Administration
   - Infrastructure as Code (Docker, GitHub Actions, SaltStack, Terraform)
-  - SaaS Management
+  - SaaS Management (GitHub organizations, Google Workspace)
 - Information Technology
   - Documentation
   - Project Management
@@ -78,7 +82,7 @@ body:
 `2010 Sep - 2018 Oct`, **Clockwork**, Minneapolis, MN
 
 - Automation and Infrastructure as Code (Bash, CloudFormation, Facter, Puppet,
-  Python)
+  Python, SaltStack)
 - Cloud Administration (Amazon Web Services [AWS])
 - Hardware Administration (Appliances, Networking, Servers)
 - Monitoring and Reporting (Collectd, Graphite, Icinga, logrep, Syslog)
