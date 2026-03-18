@@ -37,7 +37,9 @@ print_header() {
 
 cd "${DIR_REPO}"
 print_header 'uv run ruff check'
+# shellcheck disable=SC2068
 uv run ruff check ${@:-.} || error_exit "exit status: ${?}"
 echo
 print_header 'uv run ruff format --check'
+# shellcheck disable=SC2068
 uv run ruff format --check ${@:-.} || error_exit "exit status: ${?}"
