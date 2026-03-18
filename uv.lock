@@ -356,7 +356,7 @@ wheels = [
 
 [[package]]
 name = "zehta-me"
-version = "0.1.0"
+version = "3.0.0"
 source = { virtual = "." }
 dependencies = [
     { name = "colorama" },

@@ -1,17 +1,25 @@
-# Standard library
-import ast
-import io
-import re
+"""
+Setup lektor_custom_jinja2_filters.
 
+Setup lektor_custom_jinja2_filters, a collection of custom Jinja2 filters for
+Lektor.
+"""
+
+# Standard library
+# Standard library imports
+import ast
+import re
+from pathlib import Path
+
+# Third party imports
 # Third-party
 from setuptools import find_packages, setup
 
-with io.open("README.md", "rt", encoding="utf8") as f:
+with Path("README.md").open("rt", encoding="utf8") as f:
     readme = f.read()
 
 _description_re = re.compile(r"description\s+=\s+(?P<description>.*)")
-
-with open("lektor_custom_jinja2_filters.py", "rb") as f:
+with Path("lektor_custom_jinja2_filters.py").open("rb") as f:
     description = str(
         ast.literal_eval(
             _description_re.search(f.read().decode("utf-8")).group(1)
@@ -20,11 +28,8 @@ with open("lektor_custom_jinja2_filters.py", "rb") as f:
 
 setup(
     author="Timid Robot Zehta",
-    author_email="timid.robot@zehta.me",
     description=description,
-    install_requires=[
-        "python-dateutil",
-    ],
+    install_requires=["python-dateutil"],
     keywords="Lektor plugin",
     license="CC0-1.0",
     long_description=readme,
@@ -32,7 +37,8 @@ setup(
     name="lektor-custom-jinja2-filters",
     packages=find_packages(),
     py_modules=["lektor_custom_jinja2_filters"],
-    # url='[link to your repository]',
+    url="https://github.com/TimidRobot/zehta.me/tree/main/source/packages"
+    "/custom-jinja2-filters",
     version="0.3",
     classifiers=[
         "Environment :: Plugins",
@@ -43,7 +49,7 @@ setup(
     entry_points={
         "lektor.plugins": [
             "custom-jinja2-filters ="
-            " lektor_custom_jinja2_filters:CustomJinja2FiltersPlugin",
+            " lektor_custom_jinja2_filters:CustomJinja2FiltersPlugin"
         ]
     },
 )
