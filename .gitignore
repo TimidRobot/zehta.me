@@ -72,9 +72,6 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# pyenv
-.python-version
-
 # celery beat schedule file
 celerybeat-schedule
 
@@ -108,3 +105,6 @@ docs/.lektor
 
 # symlinks
 source/content/20210321-relp-anarchy-sheet/RelpAnarchySheet
+
+# ruff
+.ruff_cache/

@@ -56,12 +56,12 @@ echo
 
 if [[ -n "${CLEAR_PLUGINS:-}" ]]; then
     printf "\e[1m\e[7m %-80s\e[0m\n" 'Lektor: uninstalling all plugins'
-    pipenv run lektor plugins flush-cache
+    uv run lektor plugins flush-cache
     echo
     echo
 
     printf "\e[1m\e[7m %-80s\e[0m\n" 'Lektor: installing all plugins'
-    pipenv run lektor plugins reinstall 2>&1 \
+    uv run lektor plugins reinstall 2>&1 \
         | fgrep -v 'pecify --upgrade to force replacement'
     echo
     echo
@@ -73,10 +73,10 @@ fi
 if [[ -n "${PRETIFY:-}" ]]
 then
     printf "\e[1m\e[7m %-80s\e[0m\n" 'Lektor: building site with pretify'
-    pipenv run lektor build --extra-flag pretifyhtml --output-path ../docs
+    uv run lektor build --extra-flag pretifyhtml --output-path ../docs
 else
     printf "\e[1m\e[7m %-80s\e[0m\n" 'Lektor: building site with minify'
-    pipenv run lektor build --extra-flag minify --output-path ../docs
+    uv run lektor build --extra-flag minify --output-path ../docs
 fi
 echo
 cp -v source/assets/_redirects docs/

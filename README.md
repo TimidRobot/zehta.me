@@ -20,13 +20,13 @@ The built content is located in [`docs/`](docs/).
 This option serves content more reliably, but rebuilds all content instead of
 only content that has changed.
 
-1. Install [Pipenv][pipenv]
+1. Install [uv][uv]
     ```shell
-    brew install pipenv
+    brew install uv
     ```
-2. Install [Lektor][lektor] and other Python 3 dependencies via Pipenv
+2. Install [Lektor][lektor] and other Python 3 dependencies via uv
     ```shell
-    pipenv install
+    uv sync --locked
     ```
 3. Install Docker ([Install Docker Engine | Docker
    Documentation][installdocker])
@@ -41,7 +41,7 @@ only content that has changed.
         ./build.sh
         ```
 
-[pipenv]: https://docs.pipenv.org/en/latest/
+[uv]: https://docs.astral.sh/uv/
 [lektor]: https://www.getlektor.com/docs/
 [installdocker]: https://docs.docker.com/engine/install/
 
@@ -66,13 +66,13 @@ Description:
 This option process changes faster (only rebuilding changed content), but also
 injects Lektor admin UX and is slower than NGINX (bad for performance testing).
 
-1. Install [Pipenv][pipenv]
+1. Install [uv][uv]
     ```shell
     brew install pipenv
     ```
 2. Install [Lektor][lektor] and other Python 3 dependencies via Pipenv
     ```shell
-    pipenv install
+    uv sync --locked 
     ```
 3. Run Lektor development server
     ```shell
@@ -80,7 +80,7 @@ injects Lektor admin UX and is slower than NGINX (bad for performance testing).
     ```
    - access development site at [`127.0.0.1:5000`](http://127.0.0.1:5000/)
 
-[pipenv]: https://docs.pipenv.org/en/latest/
+[uv]: https://docs.astral.sh/uv/
 [lektor]: https://www.getlektor.com/docs/
 
 
@@ -118,12 +118,10 @@ that contributed to me being able to create and maintain this blog!
       - [Andrew-Shay/lektor-read-full-post][read-full]: Allows blog listing
         posts to be shortened with a link to the full post.
   - Python Tooling
-    - [Black][black]: the uncompromising Python code formatter
-    - [flake8][flake8]: a python tool that glues together pep8, pyflakes,
-      mccabe, and third-party plugins to check the style and quality of some
-      python code.
-    - [isort][isort]: A Python utility / library to sort imports.
-    - [Pipenv Documentation][pipenv]: Python Dev Workflow for Humans
+    - [ruff][ruff]: An extremely fast Python linter and code formatter, written
+      in Rust.
+    - [uv][uv]: An extremely fast Python package and project manager, written
+      in Rust.
   - Redirects ([`redirects/`](redirects/))
     - [tartley/colorama][colorama]: Simple cross-platform colored terminal text
       in Python
@@ -140,6 +138,7 @@ that contributed to me being able to create and maintain this blog!
 - Link rot
   - [Wayback Machine][wayback] by the [Internet Archive][archive]
 
+[lektor]: https://www.getlektor.com/docs/
 [lektorgh]: https://github.com/lektor/lektor
 [plugins]: https://www.getlektor.com/docs/plugins/
 [atom]: https://github.com/nixjdm/lektor-atom
@@ -148,9 +147,8 @@ that contributed to me being able to create and maintain this blog!
 [highlighter]: https://github.com/lektor/lektor-markdown-highlighter
 [minify]: https://github.com/pietroalbini/lektor-minify
 [read-full]: https://github.com/Andrew-Shay/lektor-read-full-post
-[black]: https://github.com/psf/black
-[flake8]: https://gitlab.com/pycqa/flake8
-[isort]: https://pycqa.github.io/isort/
+[ruff]: https://docs.astral.sh/ruff/
+[uv]: https://docs.astral.sh/uv/
 [colorama]: https://github.com/tartley/colorama
 [jinja]: https://jinja.palletsprojects.com/en/3.0.x/
 [normalize]: https://github.com/csstools/normalize.css

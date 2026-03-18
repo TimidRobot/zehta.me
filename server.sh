@@ -10,4 +10,4 @@ trap '_es=${?};
     exit ${_es}' ERR
 
 printf "\e[1m\e[7m %-80s\e[0m\n" 'Lektor: server'
-pipenv run lektor server --output-path ../docs
+uv run lektor server --output-path ../docs
