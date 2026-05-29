@@ -22,6 +22,15 @@
 /2012/10/isolating-ssd-firmware-issue*       /2012/10/isolating-ssd/
 /2012/09/to-err-iz-human*                    /2012/09/to-err-iz/
 /.                                           /
+
+# Privacy-friendly analytics by Plausible
+##############  ###################################################  ######
+# Source        # Target                                             # Code
+##############  ###################################################  ######
+/418/script.js  https://plausible.io/js/pa-_yQiU1Uh0ujA5myugH-gx.js  200
+/418/api/event  https://plausible.io/api/event                       200
+
+# Deny common scan targets
 ##################                      #########   ######
 # Source                                # Target    # Code
 ##################                      #########   ######
