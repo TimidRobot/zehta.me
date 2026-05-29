@@ -6,3 +6,5 @@ body:
 
 <i class="fas fa-exclamation-circle"></i> No page exists for the URL that you
 specified. Please double-check the URL or use the navigation, above.
+
+<script>document.addEventListener('DOMContentLoaded', function () { plausible('404'); });</script>
