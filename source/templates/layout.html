@@ -5,8 +5,13 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- Content Security Policy
+---- * 'sha256-gg/kC25+F6wT1Dcp/zHOcjibyo+aoIMxN1W3rkftzLE=' is inline script
+----   (Firefox developer tools will compute, view development site to update)
+---- * cdnjs.cloudflare.com is required for Font Awesome
+---->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; connect-src 'self'; font-src 'self' cdnjs.cloudflare.com; img-src 'self' licensebuttons.net www.gravatar.com; script-src 'self' 'sha256-3vZHnY5cOod1qtvLRl9buwMgfOtoX+DvBkBmxtQSjOs='; style-src 'self' cdnjs.cloudflare.com;"/>
+    content="default-src 'self'; connect-src 'self'; font-src 'self' cdnjs.cloudflare.com; img-src 'self' licensebuttons.net www.gravatar.com; script-src 'self' 'sha256-gg/kC25+F6wT1Dcp/zHOcjibyo+aoIMxN1W3rkftzLE='; style-src 'self' cdnjs.cloudflare.com;"/>
   <title>{%- block title %}Welcome{%- endblock %} - {{ name }}</title>
   <meta name="author" content="Timid Robot Zehta">
   <!-- Combined layout styles -->
@@ -35,7 +40,7 @@
   <!-- Privacy-friendly analytics by Plausible -->
   <script async src="/418/script.js"></script>
   <script>
-    window.plausitble=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
     plausible.init({
       endpoint: "/418/api/event"
     })
