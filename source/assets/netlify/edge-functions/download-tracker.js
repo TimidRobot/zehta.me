@@ -1,6 +1,7 @@
 // https://docs.netlify.com/build/edge-functions/overview/
 // https://plausible.io/docs/events-api
 export default async (request) => {
+  console.log("download-tracker 1");
   fetch("https://zehta.me/418/api/event", {
     method: "POST",
     body: JSON.stringify({
@@ -15,6 +16,7 @@ export default async (request) => {
     }
   })
     .then((response) => console.log(response));
+  console.log("download-tracker 2");
   //console.log("LOGMESSAGE");
   return;
 }
