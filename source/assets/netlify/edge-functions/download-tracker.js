@@ -6,7 +6,7 @@ export default async (request: Request, context: Context) => {
   fetch("https://zehta.me/418/api/event", {
     method: "POST",
     body: JSON.stringify({
-      "domain": "zehta.me"
+      "domain": "zehta.me",
       "name": "Download Tracker",
       "url": URL(request.url)
     }),

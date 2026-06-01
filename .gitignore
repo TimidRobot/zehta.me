@@ -108,3 +108,6 @@ source/content/20210321-relp-anarchy-sheet/RelpAnarchySheet
 
 # ruff
 .ruff_cache/
+
+# Local Netlify folder
+.netlify
