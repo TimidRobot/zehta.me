@@ -1,14 +1,12 @@
 // https://docs.netlify.com/build/edge-functions/overview/
 // https://plausible.io/docs/events-api
-import type { Context } from "@netlify/edge-functions";
-export default async (request: Request, context: Context) => {
-  const fileUrl = new URL(request.url);
+export default async (request) => {
   fetch("https://zehta.me/418/api/event", {
     method: "POST",
     body: JSON.stringify({
       "domain": "zehta.me",
       "name": "Download Tracker",
-      "url": URL(request.url)
+      "url": request.url
     }),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
