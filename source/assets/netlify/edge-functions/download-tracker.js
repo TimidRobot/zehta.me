@@ -10,7 +10,7 @@ export default async (request) => {
       "url": request.url
     }),
     headers: {
-      "Content-Type": "application/json; charset=UTF-8",
+      "Content-Type": "application/json",
       "User-Agent": request.headers.get("User-Agent"),
       "X-Forwarded-For": request.headers.get("X-Forwarded-For")
     }
