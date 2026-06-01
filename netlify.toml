@@ -1,3 +1,9 @@
 [build]
 base = "docs/"
 command = "true"
+
+[[edge_functions]]
+    path = "/dltest"
+    function = "download-tracker"
+
+# 
