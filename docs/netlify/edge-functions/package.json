@@ -1,0 +1,17 @@
+{
+  "name": "edge-functions",
+  "version": "1.0.0",
+  "description": "Netlify edge functions",
+  "license": "CC0",
+  "author": "Timid Robot Zehta",
+  "type": "module",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0"
+  }
+}
