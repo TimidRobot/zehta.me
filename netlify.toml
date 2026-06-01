@@ -2,6 +2,9 @@
 base = "docs/"
 command = "true"
 
+[dev]
+publish = "docs/"
+
 [[edge_functions]]
     path = "/2015/10/emotional-labor/Emotional_Labor_-_The_MetaFilter_Thread_Condensed.pdf"
     function = "download-tracker"
