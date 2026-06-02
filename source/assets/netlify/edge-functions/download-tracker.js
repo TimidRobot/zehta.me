@@ -2,8 +2,8 @@
 // https://plausible.io/docs/events-api
 export default async (request) => {
   console.log("download-tracker begin");
-  console.log(request.headers.get("User-Agent"))
-  console.log(request.headers.get("X-Forwarded-For"))
+  //console.log(request.headers.get("User-Agent"))
+  //console.log(request.headers.get("X-Forwarded-For"))
   try {
     const response = await fetch("https://zehta.me/418/api/event", {
       method: "POST",
@@ -29,4 +29,4 @@ export default async (request) => {
   console.log("download-tracker return");
   return;
 }
-// vim: set ts=2 sw=2 et:
+// vim: sts=2 sw=2 ts=2 et:
