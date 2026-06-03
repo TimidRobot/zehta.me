@@ -9,4 +9,8 @@ publish = "docs/"
   path = "/2015/10/emotional-labor/Emotional_Labor_-_The_MetaFilter_Thread_Condensed.pdf"
   function = "download-tracker"
 
+[[edge_functions]]
+  path = "/2021/03/relp-anarchy-sheet/RelpAnarchySheet.pdf"
+  function = "download-tracker"
+
 # vim: sts=2 sw=2 ts=2 et:
