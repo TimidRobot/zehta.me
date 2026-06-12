@@ -89,10 +89,10 @@ fi
 if [[ -n "${PRETIFY:-}" ]]
 then
     print_header 'Lektor: building site with pretify'
-    uv run lektor build --extra-flag pretifyhtml --output-path docs
+    uv run lektor build --output-path docs --no-prune --extra-flag pretifyhtml
 else
     print_header 'Lektor: building site with minify'
-    uv run lektor build --extra-flag minify --output-path docs
+    uv run lektor build --output-path docs --no-prune --extra-flag minify
 fi
 echo
 cp -v source/assets/_redirects docs/
@@ -100,21 +100,19 @@ echo
 
 ./sri_hashes.sh
 
-print_header 'Updating CSS SRIs in layout template'
+print_header 'Updating CSS SRIs in layout template and published docs'
 # custom.css
 sha512=$(cat docs/static/custom.css | openssl dgst -sha512 -binary \
     | openssl base64 -A)
 grep --fixed-strings --recursive --files-with-matches static/custom.css docs \
-    | xargs \
-        gsed -r \
-            -e"s|(/custom[.]css.+integrity=\")([^\"]+)|\\1sha512-${sha512}|" \
-            -i source/templates/layout.html
+    | xargs gsed --regexp-extended \
+        -e"s|(/custom[.]css[^\"]+integrity=\")([^\"]+)|\\1sha512-${sha512}|" \
+        -i source/templates/layout.html
 # layout.css
 sha512=$(cat docs/static/layout.css | openssl dgst -sha512 -binary \
     | openssl base64 -A)
 grep --fixed-strings --recursive --files-with-matches static/layout.css docs \
-    | xargs \
-        gsed -r \
-            -e"s|(/layout[.]css.+integrity=\")([^\"]+)|\\1sha512-${sha512}|" \
-            -i source/templates/layout.html
+    | xargs gsed --regexp-extended \
+        -e"s|(/layout[.]css[^\"]+integrity=\")([^\"]+)|\\1sha512-${sha512}|" \
+        -i source/templates/layout.html
 echo done.
