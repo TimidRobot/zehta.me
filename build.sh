@@ -100,12 +100,21 @@ echo
 
 ./sri_hashes.sh
 
-print_header 'Updating custom CSS SRI in layout template'
+print_header 'Updating CSS SRIs in layout template'
+# custom.css
 sha512=$(cat docs/static/custom.css | openssl dgst -sha512 -binary \
     | openssl base64 -A)
 grep --fixed-strings --recursive --files-with-matches static/custom.css docs \
     | xargs \
         gsed -r \
             -e"s|(/custom[.]css.+integrity=\")([^\"]+)|\\1sha512-${sha512}|" \
+            -i source/templates/layout.html
+# layout.css
+sha512=$(cat docs/static/layout.css | openssl dgst -sha512 -binary \
+    | openssl base64 -A)
+grep --fixed-strings --recursive --files-with-matches static/layout.css docs \
+    | xargs \
+        gsed -r \
+            -e"s|(/layout[.]css.+integrity=\")([^\"]+)|\\1sha512-${sha512}|" \
             -i source/templates/layout.html
 echo done.
