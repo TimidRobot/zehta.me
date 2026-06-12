@@ -11,6 +11,8 @@ copyright: cc-zero
 tags: 2023, floss, python, trpg
 ---
 body:
+<!-- x_ fix vim markdown highlight issue -->
+
 
 Let's use the Python programming language to explore some of the dice roll
 probabilities in a D&D 5e adventure. I personally find math easier to
@@ -65,9 +67,9 @@ print(
     f" {int(frequency / total_possible_outcomes * 100)}%"
 )
 ```
-
-    Rolling any given number on a d20 has a probability of: 1/20 or 5%
-
+```
+Rolling any given number on a d20 has a probability of: 1/20 or 5%
+```
 
 ### Dice Numpy Arrays
 
@@ -150,7 +152,7 @@ number when rolling a d20. In D&D 5e the number that must be matched or
 exceeded is the Difficulty Class (DC). It's also worth noting that Armor Class
 (AC) is simply a specific type of DC. More interesting still are the
 probability plots for rolls with [advantage and
-disadvantage](https://www.dndbeyond.com/sources/basic-rules/using-ability-scores#AdvantageandDisadvantage): 
+disadvantage](https://www.dndbeyond.com/sources/basic-rules/using-ability-scores#AdvantageandDisadvantage):
 
 
 ```python
@@ -800,16 +802,11 @@ ax.yaxis.set_major_formatter(
     adventure (free, but requires D&D Beyond signup)
     - [Pregenerated
       Characters](https://www.dndbeyond.com/sources/lmop/introduction#PregeneratedCharacters):
-      1. [Dwarven ClericDwarven Cleric (231 KB
-      PDF)](https://www.dndbeyond.com/file-attachments/0/776/dwarf-cleric.pdf)
-      2. [Elven Wizard (219 KB
-      PDF)](https://www.dndbeyond.com/file-attachments/0/777/elf-wizard.pdf)
-      3. [Halfling Rogue (202 KB
-      PDF)](https://www.dndbeyond.com/file-attachments/0/778/halfling-rogue.pdf)
-      4. [Human Fighter 1 (189 KB
-      PDF)](https://www.dndbeyond.com/file-attachments/0/779/human-fighter.pdf)
-      5. [Human Fighter 2 (188 KB
-      PDF)](https://www.dndbeyond.com/file-attachments/0/780/human-fighter2.pdf)
+      1. [Dwarven ClericDwarven Cleric (231 KB PDF)][dwarven]
+      2. [Elven Wizard (219 KB PDF)][elven]
+      3. [Halfling Rogue (202 KB PDF)][halfling]
+      4. [Human Fighter 1 (189 KB PDF)][human1]
+      5. [Human Fighter 2 (188 KB PDF)][human2]
 - D&D Rules
   - [Round Down - Basic Rules for Dungeons and Dragons (D&D) Fifth Edition (5e)
     D&D Beyond](https://www.dndbeyond.com/sources/basic-rules/introduction#RoundDown)
@@ -840,6 +837,12 @@ ax.yaxis.set_major_formatter(
 - Python Documentation
   - [itertools — Functions creating iterators for efficient looping — Python
     3.10.9 documentation](https://docs.python.org/3.10/library/itertools.html)
+
+[dwarven]: https://www.dndbeyond.com/file-attachments/0/776/dwarf-cleric.pdf
+[elven]: https://www.dndbeyond.com/file-attachments/0/777/elf-wizard.pdf
+[halfling]: https://www.dndbeyond.com/file-attachments/0/778/halfling-rogue.pdf
+[human1]: https://www.dndbeyond.com/file-attachments/0/779/human-fighter.pdf
+[human2]: https://www.dndbeyond.com/file-attachments/0/780/human-fighter2.pdf
 
 
 ## Trademark Notice

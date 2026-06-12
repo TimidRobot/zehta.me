@@ -47,7 +47,7 @@ OS Version    | OpenSSH Version | Library Version
 
 - [Ubuntu - Package Search Results -- ssh][ubuntu]
 
-[ubuntu]: http://packages.ubuntu.com/search?keywords=ssh&searchon=names&exact=1&suite=all&section=all
+[ubuntu]: http://packages.ubuntu.com/search?keywords=ssh&amp;searchon=names&amp;exact=1&amp;suite=all&amp;section=all
 
 
 ## Updates

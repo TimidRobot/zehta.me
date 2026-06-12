@@ -11,6 +11,7 @@ copyright: cc-by-sa
 tags: 2022, saltstack
 ---
 body:
+<!-- x_ fix vim markdown highlight issue -->
 
 I really wanted to use SaltStack to configure my home Linux router. It would be
 wonderful to manage that infrastructure as code. Unfortunately, it does not
@@ -34,10 +35,10 @@ I originally installed SaltStack via homebrew, but had to switch to a Python
 3.7 virtual environment due to:
 - ~~`2020 Jun 21`: [[BUG] AttributeError: 'Process' object has no attribute
   '_args_for_getstate' · Issue #57742 · saltstack/salt][i57742]~~
-<!-- x_ fix vim markdown highlight issue -->
+  <!-- x_ fix vim markdown highlight issue -->
 - ~~`2022 Jan 09`: [[BUG] salt-ssh fails due to attempting to pickle
   _thread._local object · Issue #61435 · saltstack/salt][i61435]~~
-<!-- x_ fix vim markdown highlight issue -->
+  <!-- x_ fix vim markdown highlight issue -->
 
 **Update:** These problems existed between the release of Python 3.8 on
 `2019 Oct 14` and the release of Salt version `3005` on `2022 Aug 25`.

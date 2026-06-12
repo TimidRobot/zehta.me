@@ -67,8 +67,9 @@ then
     done
 fi
 
-print_header 'Removing contents of build dir (docs/)'
-echo "$(rm -rfv docs/* | wc -l) files and directories removed"
+print_header 'Cleaning build dir (docs/)'
+echo "$(uv run lektor clean --output-path docs --yes --verbose \
+        | grep -c '^D') files and directories removed"
 echo
 
 if [[ -n "${CLEAR_PLUGINS:-}" ]]; then
@@ -88,10 +89,10 @@ fi
 if [[ -n "${PRETIFY:-}" ]]
 then
     print_header 'Lektor: building site with pretify'
-    uv run lektor build --extra-flag pretifyhtml --output-path ../docs
+    uv run lektor build --extra-flag pretifyhtml --output-path docs
 else
     print_header 'Lektor: building site with minify'
-    uv run lektor build --extra-flag minify --output-path ../docs
+    uv run lektor build --extra-flag minify --output-path docs
 fi
 echo
 cp -v source/assets/_redirects docs/

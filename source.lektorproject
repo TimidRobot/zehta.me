@@ -8,7 +8,7 @@ excluded_assets = *.pxd
 [packages]
 lektor-atom = 0.4.0
 lektor-html-pretify = 1.0.7
-lektor-markdown-header-anchors = 0.3.1
+lektor-markdown-header-anchors = 0.4
 lektor-markdown-highlighter = 0.3.2
 lektor-minify = 1.2
 lektor-read-full-post = 0.3
