@@ -1,5 +1,13 @@
-// https://docs.netlify.com/build/edge-functions/overview/
-// https://plausible.io/docs/events-api
+// Dedicated, with all copyright and related and neighboring rights, to the
+// public domain worldwide. It is distributed without any warranty (CC0 1.0
+// Universal: https://creativecommons.org/publicdomain/zero/1.0/).
+// SPDX-License-Identifier: CC0-1.0
+//
+// Netlify edge function to track downloads using Plausible
+//
+// Related documentation
+// - https://docs.netlify.com/build/edge-functions/overview/
+// - https://plausible.io/docs/events-api
 export default async (request) => {
   console.log("download-tracker begin");
   //console.log(request.headers.get("User-Agent"))
