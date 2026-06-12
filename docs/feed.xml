@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - Timid Robot</title><link href="https://zehta.me/" rel="alternate"/><link href="https://zehta.me/feed.xml" rel="self"/><id>urn:uuid:b948e31a-813a-31cb-9b20-de5981631b5b</id><updated>2023-01-16T06:56:00Z</updated><author><name>Timid Robot Zehta</name></author><entry><title>Phandelver Probabilities</title><link href="https://zehta.me/2023/01/phandelver-probabilities/" rel="alternate"/><updated>2023-01-16T06:56:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:bdb5438d-9225-3917-8b00-65b149cd0200</id><content type="html">&lt;p&gt;Let's use the Python programming language to explore some of the dice roll
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog - Timid Robot</title><link href="https://zehta.me/" rel="alternate"/><link href="https://zehta.me/feed.xml" rel="self"/><id>urn:uuid:b948e31a-813a-31cb-9b20-de5981631b5b</id><updated>2023-01-16T06:56:00Z</updated><author><name>Timid Robot Zehta</name></author><entry><title>Phandelver Probabilities</title><link href="https://zehta.me/2023/01/phandelver-probabilities/" rel="alternate"/><updated>2023-01-16T06:56:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:bdb5438d-9225-3917-8b00-65b149cd0200</id><content type="html">&lt;!-- x_ fix vim markdown highlight issue --&gt;
+&lt;p&gt;Let's use the Python programming language to explore some of the dice roll
 probabilities in a D&amp;amp;D 5e adventure. I personally find math easier to
 understand when it's expressed as Python code and I want to improve my
 familiarity with plotting (graphing) using the &lt;code&gt;matplotlib&lt;/code&gt; Python library.&lt;/p&gt;
@@ -89,7 +90,7 @@ numbers used by dice using its functions:&lt;/p&gt;
 &lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yaxis&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_minor_locator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticker&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;AutoMinorLocator&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
 &lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_ylim&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_7_1.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_7_1.png" alt="png" /&gt;&lt;/p&gt;
 &lt;h2 id="ability-checks"&gt;Ability Checks&lt;/h2&gt;&lt;p&gt;It's a little more interesting, however, if we plot the chance of exceeding a
 number when rolling a d20. In D&amp;amp;D 5e the number that must be matched or
 exceeded is the Difficulty Class (DC). It's also worth noting that Armor Class
@@ -164,7 +165,7 @@ disadvantage&lt;/a&gt;:&lt;/p&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ax&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;axs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_9_0.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_9_0.png" alt="png" /&gt;&lt;/p&gt;
 &lt;p&gt;Or all together:&lt;/p&gt;
 &lt;div class="hll"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# annotate(), d20, advantage_roll, normal_roll, and disadvantage_roll are defined above&lt;/span&gt;
 
@@ -218,7 +219,7 @@ disadvantage&lt;/a&gt;:&lt;/p&gt;
 &lt;span class="c1"&gt;# Configure Legend&lt;/span&gt;
 &lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_11_1.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_11_1.png" alt="png" /&gt;&lt;/p&gt;
 &lt;h2 id="goblin-ambush"&gt;Goblin Ambush&lt;/h2&gt;&lt;p&gt;Four &lt;a href="https://www.dndbeyond.com/monsters/16907-goblin"&gt;goblins&lt;/a&gt; attempt to
 ambush the party. Their stealth modifier is +6 vs the party's passive
 perception. Will they surprise everyone in the party?&lt;/p&gt;
@@ -289,7 +290,7 @@ perception. Will they surprise everyone in the party?&lt;/p&gt;
 &lt;span class="n"&gt;ax2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yaxis&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_major_formatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ticker&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PercentFormatter&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
 &lt;span class="n"&gt;ax2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_ylim&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ax1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_ylim&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;  &lt;span class="c1"&gt;# use same scale for both axes&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_13_1.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_13_1.png" alt="png" /&gt;&lt;/p&gt;
 &lt;h2 id="initiative-rolls"&gt;Initiative Rolls&lt;/h2&gt;&lt;p&gt;Initiative, for everyone involved in this encounter, uses a single die with a
 flat probability plot (boring). However, I think the comparison between
 characters is interesting:&lt;/p&gt;
@@ -348,7 +349,7 @@ characters is interesting:&lt;/p&gt;
     &lt;span class="n"&gt;ticker&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FixedFormatter&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;initiative&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_15_0.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_15_0.png" alt="png" /&gt;&lt;/p&gt;
 &lt;h2 id="damage-rolls"&gt;Damage Rolls&lt;/h2&gt;&lt;p&gt;With initiative order established, let us investigate the more interesting
 damage probabilities. We'll only explore the specific damage rolls with
 interesting (not flat) plots. Last we'll compare damage ranges and averages.&lt;/p&gt;
@@ -405,7 +406,7 @@ fellow party member is adjacentto their target:&lt;/p&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;probability_total&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mf"&gt;100.001&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ERROR: total damage probability:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;probability_total&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_17_0.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_17_0.png" alt="png" /&gt;&lt;/p&gt;
 &lt;h3 id="elf-wizard"&gt;Elf Wizard&lt;/h3&gt;&lt;p&gt;The Elf Wizard has more interesting attacks in terms of probability. First,
 we'll investigate the damage probability of the &lt;a href="https://www.dndbeyond.com/spells/magic-missile"&gt;Magic
 Missile&lt;/a&gt; spell at 1st level:&lt;/p&gt;
@@ -459,7 +460,7 @@ Missile&lt;/a&gt; spell at 1st level:&lt;/p&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;probability_total&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mf"&gt;100.001&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ERROR: total damage probability:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;probability_total&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_19_0.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_19_0.png" alt="png" /&gt;&lt;/p&gt;
 &lt;p&gt;Next, we'll investigate the damage probability if the Elf Wizard casts the
 &lt;a href="https://www.dndbeyond.com/spells/burning-hands"&gt;Burning Hands&lt;/a&gt; spell at 1st
 level:&lt;/p&gt;
@@ -511,7 +512,7 @@ level:&lt;/p&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;probability_total&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mf"&gt;100.001&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ERROR: total damage probability:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;probability_total&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_21_0.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_21_0.png" alt="png" /&gt;&lt;/p&gt;
 &lt;h3 id="goblins"&gt;Goblins&lt;/h3&gt;&lt;p&gt;The total damage of the four
 &lt;a href="https://www.dndbeyond.com/monsters/16907-goblin"&gt;goblins&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="hll"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# annotate() and d6 are defined above&lt;/span&gt;
@@ -564,7 +565,7 @@ level:&lt;/p&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;probability_total&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mf"&gt;100.001&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ERROR: total damage probability:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;probability_total&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_23_0.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_23_0.png" alt="png" /&gt;&lt;/p&gt;
 &lt;h3 id="damage-range-comparisons"&gt;Damage Range Comparisons&lt;/h3&gt;&lt;p&gt;Last, let's look at optimal damage comparisons (ignoring criticals, but
 otherwise assuming the best circumstance for each character or monster group):&lt;/p&gt;
 &lt;div class="hll"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# dice() is defined above&lt;/span&gt;
@@ -620,7 +621,7 @@ otherwise assuming the best circumstance for each character or monster group):&l
 &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yaxis&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_tick_params&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;labelsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;small&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_25_0.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_25_0.png" alt="png" /&gt;&lt;/p&gt;
 &lt;p&gt;The players have the benefit of outnumbering the goblins:&lt;/p&gt;
 &lt;div class="hll"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create dataset: group, damage array&lt;/span&gt;
 &lt;span class="n"&gt;damage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
@@ -666,23 +667,18 @@ otherwise assuming the best circumstance for each character or monster group):&l
     &lt;span class="n"&gt;ticker&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;FixedFormatter&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;item&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;item&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;damage&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_27_0.png" alt="png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/2023/01/phandelver-probabilities/output_27_0.png" alt="png" /&gt;&lt;/p&gt;
 &lt;h2 id="notes-and-references"&gt;Notes and References&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;D&amp;amp;D Content&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.dndbeyond.com/sources/lmop"&gt;Lost Mine of Phandelver&lt;/a&gt; D&amp;amp;D
 adventure (free, but requires D&amp;amp;D Beyond signup)&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.dndbeyond.com/sources/lmop/introduction#PregeneratedCharacters"&gt;Pregenerated
 Characters&lt;/a&gt;:&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://www.dndbeyond.com/file-attachments/0/776/dwarf-cleric.pdf"&gt;Dwarven ClericDwarven Cleric (231 KB
-PDF)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.dndbeyond.com/file-attachments/0/777/elf-wizard.pdf"&gt;Elven Wizard (219 KB
-PDF)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.dndbeyond.com/file-attachments/0/778/halfling-rogue.pdf"&gt;Halfling Rogue (202 KB
-PDF)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.dndbeyond.com/file-attachments/0/779/human-fighter.pdf"&gt;Human Fighter 1 (189 KB
-PDF)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.dndbeyond.com/file-attachments/0/780/human-fighter2.pdf"&gt;Human Fighter 2 (188 KB
-PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.dndbeyond.com/file-attachments/0/776/dwarf-cleric.pdf"&gt;Dwarven ClericDwarven Cleric (231 KB PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.dndbeyond.com/file-attachments/0/777/elf-wizard.pdf"&gt;Elven Wizard (219 KB PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.dndbeyond.com/file-attachments/0/778/halfling-rogue.pdf"&gt;Halfling Rogue (202 KB PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.dndbeyond.com/file-attachments/0/779/human-fighter.pdf"&gt;Human Fighter 1 (189 KB PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.dndbeyond.com/file-attachments/0/780/human-fighter2.pdf"&gt;Human Fighter 2 (188 KB PDF)&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -739,7 +735,8 @@ owners.&lt;/p&gt;
 &lt;h2 id="source"&gt;Source&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/TimidRobot/dnd_probabilities"&gt;TimidRobot/dnd_probabilities&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Emotional Labor Revisited</title><link href="https://zehta.me/2022/07/emotional-labor-revisited/" rel="alternate"/><updated>2022-07-09T19:32:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:8ae708e0-c6f1-3b89-b5fa-a1d34bdaf231</id><content type="html">&lt;p&gt;Back in 2015, I read an amazing document. It was a digest of a message thread
+</content></entry><entry><title>Emotional Labor Revisited</title><link href="https://zehta.me/2022/07/emotional-labor-revisited/" rel="alternate"/><updated>2022-07-09T19:32:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:8ae708e0-c6f1-3b89-b5fa-a1d34bdaf231</id><content type="html">&lt;!-- x_ fix vim markdown highlight issue --&gt;
+&lt;p&gt;Back in 2015, I read an amazing document. It was a digest of a message thread
 about Emotional Labor. Before I was done I knew I wanted to share it with
 everyone I cared about.&lt;/p&gt;
 &lt;p&gt;To that end I collaborated with the creator of the digest to
@@ -754,50 +751,50 @@ asking for access. As of &lt;code&gt;2024 Mar 15&lt;/code&gt; I have replied ove
 receive feedback over the years. Most of it simply expresses gratitude. Here
 are some anonymized excerpts about the content itself:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;2023 Dec 02&lt;/code&gt;&lt;blockquote&gt;&lt;p&gt;Thank you. I think this paper has helped a lot of people. I truly
-appreciate it.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;&lt;code&gt;2023 Dec 02&lt;/code&gt;&lt;blockquote&gt;
+Thank you. I think this paper has helped a lot of people. I truly
+appreciate it.&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2023 Aug 24&lt;/code&gt;&lt;blockquote&gt;&lt;p&gt;I'll [...] download a copy for my mum-- she's going to feel so seen!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;&lt;code&gt;2023 Aug 24&lt;/code&gt;&lt;blockquote&gt;
+I'll [...] download a copy for my mum-- she's going to feel so seen!&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;2023 Jun 27&lt;/code&gt;
-from the acknowledgements in &lt;em&gt;The Wife App&lt;/em&gt;, by Carolyn Mackler:&lt;blockquote&gt;&lt;p&gt;The stories in Emotional Thread: The MetaFilter Thread Condensed edited by
+from the acknowledgements in &lt;em&gt;The Wife App&lt;/em&gt;, by Carolyn Mackler:&lt;blockquote&gt;
+The stories in Emotional Thread: The MetaFilter Thread Condensed edited by
 Olivia K. Lima, Josh Millard, and Timid Robot Zehta were hilarious,
-heartbreaking, and fully relatable.&lt;/p&gt;
-&lt;/blockquote&gt;
+heartbreaking, and fully relatable.&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2022 Aug 29&lt;/code&gt;&lt;blockquote&gt;&lt;p&gt;I'm a relationship counselor. A common relationship issue (as you might
+&lt;li&gt;&lt;code&gt;2022 Aug 29&lt;/code&gt;&lt;blockquote&gt;
+I'm a relationship counselor. A common relationship issue (as you might
 expect) is emotional labor, and people often don't have language for what
 they're trying to express. A brilliantly written, skillfully edited
-document is just what they need.&lt;/p&gt;
-&lt;/blockquote&gt;
+document is just what they need.&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2022 Jun 04&lt;/code&gt;&lt;blockquote&gt;&lt;p&gt;Still relevant in 2022&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;&lt;code&gt;2022 Jun 04&lt;/code&gt;&lt;blockquote&gt;
+Still relevant in 2022&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2019 Jul 05&lt;/code&gt;&lt;blockquote&gt;&lt;p&gt;I know it's a few years on but I actually only very recently found it and
-it's been lifechanging to say the least!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;&lt;code&gt;2019 Jul 05&lt;/code&gt;&lt;blockquote&gt;
+I know it's a few years on but I actually only very recently found it and
+it's been lifechanging to say the least!&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2017 Apr 30&lt;/code&gt;&lt;blockquote&gt;&lt;p&gt;I already shared this with a couple of friends and can't stop talking about
+&lt;li&gt;&lt;code&gt;2017 Apr 30&lt;/code&gt;&lt;blockquote&gt;
+I already shared this with a couple of friends and can't stop talking about
 it. All of the women with whom I talked about this had the same feelings
 and were shocked to see it was so common and had a name. I think that's
 actually the most important thing: this EXISTS and putting words on it
-helps so much.&lt;/p&gt;
-&lt;/blockquote&gt;
+helps so much.&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2016 Jul 07&lt;/code&gt;&lt;blockquote&gt;&lt;p&gt;While reading it, I found aspects of women's struggles within relationships
-that I hadn't heard before, and it has given me a lot to think about.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;&lt;code&gt;2016 Jul 07&lt;/code&gt;&lt;blockquote&gt;
+While reading it, I found aspects of women's struggles within relationships
+that I hadn't heard before, and it has given me a lot to think about.&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2016 Feb 09&lt;/code&gt;&lt;blockquote&gt;&lt;p&gt;I read the condensed document [...] and found food for thought and room for
-personal improvement. Thanks for taking the time to make it.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;&lt;code&gt;2016 Feb 09&lt;/code&gt;&lt;blockquote&gt;
+I read the condensed document [...] and found food for thought and room for
+personal improvement. Thanks for taking the time to make it.&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2015 Dec 19&lt;/code&gt;&lt;blockquote&gt;&lt;p&gt;It's just a really remarkable, moving, organized, enlightening,
-sanity-restoring thing.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;&lt;code&gt;2015 Dec 19&lt;/code&gt;&lt;blockquote&gt;
+It's just a really remarkable, moving, organized, enlightening,
+sanity-restoring thing.&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="in-the-media"&gt;In the Media&lt;/h2&gt;&lt;p&gt;Unfortunately, I haven't had any success trying to get the broken PDF links in
@@ -823,22 +820,26 @@ Toast&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;2022 Nov 04&lt;/code&gt;: Added Article That Started It All and updated In the Media&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;2022 Aug 30&lt;/code&gt;: Added feedback&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Abandoning SaltStack?</title><link href="https://zehta.me/2022/03/abandoning-saltstack/" rel="alternate"/><updated>2022-03-12T12:30:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:21a63321-9195-3291-af16-63cfb6da9a05</id><content type="html">&lt;p&gt;I really wanted to use SaltStack to configure my home Linux router. It would be
+</content></entry><entry><title>Abandoning SaltStack?</title><link href="https://zehta.me/2022/03/abandoning-saltstack/" rel="alternate"/><updated>2022-03-12T12:30:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:21a63321-9195-3291-af16-63cfb6da9a05</id><content type="html">&lt;!-- x_ fix vim markdown highlight issue --&gt;
+&lt;p&gt;I really wanted to use SaltStack to configure my home Linux router. It would be
 wonderful to manage that infrastructure as code. Unfortunately, it does not
 seem tenable for me.&lt;/p&gt;
 &lt;h2 id="issues-at-home"&gt;Issues at Home&lt;/h2&gt;&lt;h3 id="does-not-support-python-3-8-on-macos"&gt;Does not support Python 3.8+ on macOS&lt;/h3&gt;&lt;p&gt;My goal was to be able to push configurations using &lt;code&gt;salt-ssh&lt;/code&gt; from my macOS
 laptop. SaltStack claims macOS is supported. &lt;a href="https://docs.saltproject.io/en/3004/topics/about_salt_project.html"&gt;Salt Project&lt;/a&gt;
 (emphasis added):&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;Salt is tested and packaged to run on CentOS, Debian, RHEL, Ubuntu,
+&lt;blockquote&gt;
+&lt;p&gt;Salt is tested and packaged to run on CentOS, Debian, RHEL, Ubuntu,
 &lt;strong&gt;MacOS&lt;/strong&gt;, Windows, and more.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I originally installed SaltStack via homebrew, but had to switch to a Python
 3.7 virtual environment due to:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;del&gt;&lt;code&gt;2020 Jun 21&lt;/code&gt;: &lt;a href="https://github.com/saltstack/salt/issues/57742"&gt;[BUG] AttributeError: 'Process' object has no attribute
-'_args_for_getstate' · Issue #57742 · saltstack/salt&lt;/a&gt;&lt;/del&gt;&lt;!-- x_ fix vim markdown highlight issue --&gt;&lt;/li&gt;
+'_args_for_getstate' · Issue #57742 · saltstack/salt&lt;/a&gt;&lt;/del&gt;&lt;!-- x_ fix vim markdown highlight issue --&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;del&gt;&lt;code&gt;2022 Jan 09&lt;/code&gt;: &lt;a href="https://github.com/saltstack/salt/issues/61435"&gt;[BUG] salt-ssh fails due to attempting to pickle
-_thread._local object · Issue #61435 · saltstack/salt&lt;/a&gt;&lt;/del&gt;&lt;!-- x_ fix vim markdown highlight issue --&gt;&lt;/li&gt;
+_thread._local object · Issue #61435 · saltstack/salt&lt;/a&gt;&lt;/del&gt;&lt;!-- x_ fix vim markdown highlight issue --&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; These problems existed between the release of Python 3.8 on
 &lt;code&gt;2019 Oct 14&lt;/code&gt; and the release of Salt version &lt;code&gt;3005&lt;/code&gt; on &lt;code&gt;2022 Aug 25&lt;/code&gt;.&lt;/p&gt;
@@ -855,7 +856,8 @@ saltstack/salt&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
 SaltStack mainstream by using a SaltStack docker image. &lt;del&gt;Unfortunately, no
 &lt;code&gt;3004&lt;/code&gt; docker image was available&lt;/del&gt; (note update, below). &lt;a href="https://hub.docker.com/r/saltstack/salt"&gt;saltstack/salt -
 Docker Image | Docker Hub&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Supported tags and respective &lt;code&gt;Dockerfile&lt;/code&gt; links&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Supported tags and respective &lt;code&gt;Dockerfile&lt;/code&gt; links&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;3004rc1&lt;/code&gt;, &lt;code&gt;rc&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;3003.3&lt;/code&gt;, &lt;code&gt;3003.2&lt;/code&gt;, &lt;code&gt;3003.1&lt;/code&gt;, &lt;code&gt;3003&lt;/code&gt;, &lt;code&gt;latest&lt;/code&gt;&lt;/li&gt;
@@ -922,9 +924,10 @@ needs).&lt;/p&gt;
 &lt;/ul&gt;
 </content></entry><entry><title>Psychological Safety and the Unix Room</title><link href="https://zehta.me/2021/04/unix-room/" rel="alternate"/><updated>2021-04-16T00:29:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:7a2106fd-8b6d-31ac-b5d4-47227c4e50ad</id><content type="html">&lt;p&gt;Ever since I first read it in 2004, the following quote has stuck with me. I've
 added it almost every internal company wiki I've managed.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;One odd detail that I think was vital to how the group [at Bell Labs]
+&lt;blockquote&gt;
+&lt;p&gt;One odd detail that I think was vital to how the group [at Bell Labs]
 functioned was a result of the first Unix being run on a clunky minicomputer
-with terminals in the machine room.&lt;br&gt;
+with terminals in the machine room.&lt;br /&gt;
 People working on the system congregated in the room - to use the computer,
 you pretty much had to be there.  (This idea didn't seem odd back then; it
 was a natural evolution of the old hour-at-a-time way of booking machines
@@ -972,8 +975,8 @@ colonization, imperialism, and nationalism.&lt;/p&gt;
 &lt;p&gt;While it may be less intuitive in regional contexts, it is an educational
 opportunity requiring relatively low effort.&lt;/p&gt;
 &lt;h2 id="xkcd"&gt;xkcd&lt;/h2&gt;&lt;p&gt;&lt;img src="/2021/04/int-date-format/iso_8601_2x.png" alt="&amp;quot;xkcd: ISO 8601&amp;quot; by Randall Munroe is licensed under CC-BY-NC
-2.5"&gt;&lt;/p&gt;
-&lt;p&gt;"&lt;a href="https://xkcd.com/1179/"&gt;xkcd: ISO 8601&lt;/a&gt;" by Randall Munroe is licensed under &lt;a href="http://creativecommons.org/licenses/by-nc/2.5/"&gt;CC-BY-NC
+2.5" /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;quot;&lt;a href="https://xkcd.com/1179/"&gt;xkcd: ISO 8601&lt;/a&gt;&amp;quot; by Randall Munroe is licensed under &lt;a href="http://creativecommons.org/licenses/by-nc/2.5/"&gt;CC-BY-NC
 2.5&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;For an explanation of the comic (ex. the meaning of the dates in the gray
 area), see &lt;a href="https://www.explainxkcd.com/wiki/index.php/1179:_ISO_8601"&gt;1179: ISO 8601 - explain xkcd&lt;/a&gt;.&lt;/p&gt;
@@ -1062,7 +1065,8 @@ easier to acquire and care for.&lt;/p&gt;
 EC2 instances with EBS volumes. Depending on chance (or race conditions), the
 mapping of block devices can be different from one host to another or between
 reboots.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;Occasionally, devices can respond to discovery in a different order in
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Occasionally, devices can respond to discovery in a different order in
 subsequent instance starts, which causes the device name to change.&lt;/em&gt;
 (&lt;a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html" title="Amazon EBS and NVMe on Linux Instances - Amazon Elastic Compute Cloud"&gt;Amazon EBS and NVMe on Linux Instances - Amazon Elastic Compute
 Cloud&lt;/a&gt;)&lt;/p&gt;
@@ -1073,7 +1077,8 @@ At Creative Commons, we use the device specified during provisioning (ex.
 &lt;code&gt;/dev/xvdf&lt;/code&gt;) to identify the correct NVMEe device. We then format it with a
 label that can be used mounting during subsequent reboots.&lt;/p&gt;
 &lt;p&gt;Thankfully, AWS documents the the device specified during provisioning (ex. &lt;code&gt;/dev/xvdf&lt;/code&gt;):&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;For Nitro-based instances, the block device mappings that are specified in
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;For Nitro-based instances, the block device mappings that are specified in
 the Amazon EC2 console when you are attaching an EBS volume or during
 AttachVolume or RunInstances API calls are captured in the vendor-specific
 data field of the NVMe controller identification.&lt;/em&gt;
@@ -1109,19 +1114,20 @@ the correct one:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Example variable values:&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th&gt;Jinja2 Variable&lt;/th&gt;
-&lt;th&gt;Example Value&lt;/th&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;Jinja2 Variable&lt;/th&gt;
+  &lt;th&gt;Example Value&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;{{ spec_short }}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;xvdf&lt;/code&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;code&gt;{{ spec_short }}&lt;/code&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;code&gt;xvdf&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;{{ spec_long }}&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/dev/xvdf&lt;/code&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;code&gt;{{ spec_long }}&lt;/code&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;code&gt;/dev/xvdf&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1180,7 +1186,7 @@ it can better protect members of the LGBT+ communities:&lt;/p&gt;
 &lt;li&gt;Adapted from &lt;a href="https://meta.wikimedia.org/wiki/Wikimedia_New_York_City/Code_of_Conduct"&gt;Wikimedia New York City/Code of Conduct - Meta&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Add deliberate misgendering or use of "dead" or rejected names&lt;ul&gt;
+&lt;li&gt;Add deliberate misgendering or use of &amp;quot;dead&amp;quot; or rejected names&lt;ul&gt;
 &lt;li&gt;Adapted from &lt;a href="https://lgbtq.technology/coc.html"&gt;Code of Conduct - LGBTQ in Technology&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1199,14 +1205,15 @@ specific to LGBT+ communities&lt;ul&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id="updated-stanza"&gt;Updated Stanza&lt;/h4&gt;&lt;blockquote&gt;&lt;ul&gt;
+&lt;h4 id="updated-stanza"&gt;Updated Stanza&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ul&gt;
 &lt;li&gt;The use of sexualized language or imagery not directly related to
 conference content (conference content might include: history of gender in
 images, HIV awareness, etc.)&lt;/li&gt;
 &lt;li&gt;Sexual attention or advances of any kind&lt;/li&gt;
 &lt;li&gt;Trolling, insulting or derogatory comments, and personal or political
 attacks&lt;/li&gt;
-&lt;li&gt;Deliberate misgendering or use of "dead" or rejected names&lt;/li&gt;
+&lt;li&gt;Deliberate misgendering or use of &amp;quot;dead&amp;quot; or rejected names&lt;/li&gt;
 &lt;li&gt;Questioning or challenging someone's stated self-identity or chosen labels,
 even if they conflict with your own views&lt;/li&gt;
 &lt;li&gt;Making general statements about groups you do not belong to&lt;/li&gt;
@@ -1246,7 +1253,8 @@ professional setting&lt;/li&gt;
 &lt;span class="w"&gt; &lt;/span&gt;* Other conduct which could reasonably be considered inappropriate in a
 &lt;span class="w"&gt; &lt;/span&gt;  professional setting
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="enforcement"&gt;Enforcement&lt;/h3&gt;&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Important!&lt;/strong&gt; You must add a contact method to the placeholder in the
+&lt;h3 id="enforcement"&gt;Enforcement&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Important!&lt;/strong&gt; You must add a contact method to the placeholder in the
 document so that people know how to report violations. (&lt;a href="https://www.contributor-covenant.org/"&gt;Contributor
 Covenant&lt;/a&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1280,7 +1288,8 @@ repository. See the README there for additional context and links.&lt;/p&gt;
 &lt;td class="dc BluePlum"&gt;&lt;code&gt;#cc99ff&lt;/code&gt;&lt;br&gt;&lt;em&gt;--BluePlum&lt;/em&gt;&lt;/td&gt;
 &lt;td class="dc DarkRoyal"&gt;&lt;code&gt;#221122&lt;/code&gt;&lt;br&gt;&lt;em&gt;--DarkRoyal&lt;/em&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/table&gt;&lt;h3 id="tools-and-references"&gt;Tools and References&lt;/h3&gt;&lt;ul&gt;
+&lt;/table&gt;
+&lt;h3 id="tools-and-references"&gt;Tools and References&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://wismuth.com/webcolors.html"&gt;Closest Named Web Colors&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://web.dev/measure/"&gt;Measure page quality - web.dev&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1318,7 +1327,7 @@ repositories for the first time&lt;ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Participate in social media networks to actively recruit groups who are
 underrepresented in FOSS (free and open source software)&lt;/li&gt;
-&lt;li&gt;Collect anonymous demographic data &lt;/li&gt;
+&lt;li&gt;Collect anonymous demographic data&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;A couple of organization examples:&lt;/p&gt;
 &lt;ul&gt;
@@ -1333,9 +1342,9 @@ reduce redundancy as much as possible. With configuration management,
 duplicated configurations can quickly lead to confusion and unexpected states.
 One of the key ways to reduce configuration duplication is robust host
 classification.&lt;/p&gt;
-&lt;h3 id="minion-classification"&gt;Minion Classification&lt;/h3&gt;&lt;p&gt;As this post is about SaltStack, the terms "minion classification" for "host
-classification" and "minion" for "host" are used. With Puppet, "node
-classification" and "node" would be used.&lt;/p&gt;
+&lt;h3 id="minion-classification"&gt;Minion Classification&lt;/h3&gt;&lt;p&gt;As this post is about SaltStack, the terms &amp;quot;minion classification&amp;quot; for &amp;quot;host
+classification&amp;quot; and &amp;quot;minion&amp;quot; for &amp;quot;host&amp;quot; are used. With Puppet, &amp;quot;node
+classification&amp;quot; and &amp;quot;node&amp;quot; would be used.&lt;/p&gt;
 &lt;p&gt;Minion classification consists of rules that determine what a minion is and
 which states (or configurations) should be applied to it. Good minion
 classification removes or minimizes the necessity of explicitly assigning
@@ -1393,8 +1402,8 @@ Open Source Initiative&lt;/a&gt;). Over the years it has provided me with access
 and capabilities I would not normally be able to afford.&lt;/p&gt;
 &lt;p&gt;I had very little money in college. My first computer was salvaged from a
 dumpster and ran entirely on open source software. I was once reduced to
-begging a few dollars to satisfy a museum's arbitrarily enforced "suggested
-donation". Thankfully, open source image manipulation software powered many of
+begging a few dollars to satisfy a museum's arbitrarily enforced &amp;quot;suggested
+donation&amp;quot;. Thankfully, open source image manipulation software powered many of
 my art projects.&lt;/p&gt;
 &lt;p&gt;With the exception of typing class in high school and a few training sessions
 at work, I have never received any formal computer training. Instead, I was
@@ -1459,106 +1468,108 @@ The MetaFilter Thread Condensed (PDF)&lt;/a&gt;.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;2022 Jul 18&lt;/code&gt;: added link to &lt;a href="/2022/07/emotional-labor-revisited/"&gt;Emotional Labor Revisited&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;2022 Apr 26&lt;/code&gt;: updated document URL after Google broke the the previous one&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Maybe It's Valvoline</title><link href="https://zehta.me/2015/06/maybe-its-valvoline/" rel="alternate"/><updated>2015-06-09T22:17:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:db376a38-6129-3172-ae66-c83feb9f4733</id><content type="html">&lt;p&gt;&lt;img src="/2015/06/maybe-its-valvoline/furiosa_maybe_its_valvoline.png" alt="Maybe she&amp;#39;s borth with it--maybe it&amp;#39;s Valvoline" title="Maybe she&amp;#39;s borth with it--maybe it&amp;#39;s Valvoline"&gt;&lt;/p&gt;
+</content></entry><entry><title>Maybe It's Valvoline</title><link href="https://zehta.me/2015/06/maybe-its-valvoline/" rel="alternate"/><updated>2015-06-09T22:17:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:db376a38-6129-3172-ae66-c83feb9f4733</id><content type="html">&lt;p&gt;&lt;img src="/2015/06/maybe-its-valvoline/furiosa_maybe_its_valvoline.png" alt="Maybe she's borth with it--maybe it's Valvoline" title="Maybe she's borth with it--maybe it's Valvoline" /&gt;&lt;/p&gt;
 </content></entry><entry><title>Apple and Ubuntu OpenSSH Versions</title><link href="https://zehta.me/2015/02/apple-ubuntu-ssh/" rel="alternate"/><updated>2015-02-24T09:08:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:14af2ada-c3bb-3612-be81-f2d18c949123</id><content type="html">&lt;p&gt;I use and support SSH every working day. I created these tables of OpenSSH
 versions to make troubleshooting easier:&lt;/p&gt;
 &lt;h2 id="apple-macos/os-x"&gt;Apple macOS / OS X&lt;/h2&gt;&lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th&gt;OS Version&lt;/th&gt;
-&lt;th&gt;OpenSSH Version&lt;/th&gt;
-&lt;th&gt;Library Version&lt;/th&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;OS Version&lt;/th&gt;
+  &lt;th&gt;OpenSSH Version&lt;/th&gt;
+  &lt;th&gt;Library Version&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;10.14 Mojave&lt;/td&gt;
-&lt;td&gt;7.9p1&lt;/td&gt;
-&lt;td&gt;LibreSSL 2.7.3&lt;/td&gt;
+  &lt;td&gt;10.14 Mojave&lt;/td&gt;
+  &lt;td&gt;7.9p1&lt;/td&gt;
+  &lt;td&gt;LibreSSL 2.7.3&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;10.13 High Sierra&lt;/td&gt;
-&lt;td&gt;7.6p1&lt;/td&gt;
-&lt;td&gt;LibreSSL 2.6.2&lt;/td&gt;
+  &lt;td&gt;10.13 High Sierra&lt;/td&gt;
+  &lt;td&gt;7.6p1&lt;/td&gt;
+  &lt;td&gt;LibreSSL 2.6.2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;10.12 Sierra&lt;/td&gt;
-&lt;td&gt;7.2p2&lt;/td&gt;
-&lt;td&gt;LibreSSL 2.4.1&lt;/td&gt;
+  &lt;td&gt;10.12 Sierra&lt;/td&gt;
+  &lt;td&gt;7.2p2&lt;/td&gt;
+  &lt;td&gt;LibreSSL 2.4.1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;10.11 El Capitan&lt;/td&gt;
-&lt;td&gt;6.9p1&lt;/td&gt;
-&lt;td&gt;LibreSSL 2.1.8&lt;/td&gt;
+  &lt;td&gt;10.11 El Capitan&lt;/td&gt;
+  &lt;td&gt;6.9p1&lt;/td&gt;
+  &lt;td&gt;LibreSSL 2.1.8&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;10.10 Yosemite&lt;/td&gt;
-&lt;td&gt;6.2p2&lt;/td&gt;
-&lt;td&gt;OSSLShim 0.9.8r 8 Dec 2011&lt;/td&gt;
+  &lt;td&gt;10.10 Yosemite&lt;/td&gt;
+  &lt;td&gt;6.2p2&lt;/td&gt;
+  &lt;td&gt;OSSLShim 0.9.8r 8 Dec 2011&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;10.9 Mavericks&lt;/td&gt;
-&lt;td&gt;6.2p2&lt;/td&gt;
-&lt;td&gt;OSSLShim 0.9.8r 8 Dec 2011&lt;/td&gt;
+  &lt;td&gt;10.9 Mavericks&lt;/td&gt;
+  &lt;td&gt;6.2p2&lt;/td&gt;
+  &lt;td&gt;OSSLShim 0.9.8r 8 Dec 2011&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;10.8 Mountain Lion&lt;/td&gt;
-&lt;td&gt;5.9p1&lt;/td&gt;
-&lt;td&gt;OpenSSL 0.9.8zc 15 Oct 2014&lt;/td&gt;
+  &lt;td&gt;10.8 Mountain Lion&lt;/td&gt;
+  &lt;td&gt;5.9p1&lt;/td&gt;
+  &lt;td&gt;OpenSSL 0.9.8zc 15 Oct 2014&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;10.7 Lion&lt;/td&gt;
-&lt;td&gt;5.6&lt;/td&gt;
-&lt;td&gt;OpenSSL 0.9.8za 5 Jun 2014&lt;/td&gt;
+  &lt;td&gt;10.7 Lion&lt;/td&gt;
+  &lt;td&gt;5.6&lt;/td&gt;
+  &lt;td&gt;OpenSSL 0.9.8za 5 Jun 2014&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;10.6 Snow Leopard&lt;/td&gt;
-&lt;td&gt;5.5p1&lt;/td&gt;
-&lt;td&gt;OpenSSL 0.9.8l 5 Nov 2009&lt;/td&gt;
+  &lt;td&gt;10.6 Snow Leopard&lt;/td&gt;
+  &lt;td&gt;5.5p1&lt;/td&gt;
+  &lt;td&gt;OpenSSL 0.9.8l 5 Nov 2009&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;10.5 Leopard&lt;/td&gt;
-&lt;td&gt;5.1p1&lt;/td&gt;
-&lt;td&gt;OpenSSL 0.9.7l 28 Sep 2006&lt;/td&gt;
+  &lt;td&gt;10.5 Leopard&lt;/td&gt;
+  &lt;td&gt;5.1p1&lt;/td&gt;
+  &lt;td&gt;OpenSSL 0.9.7l 28 Sep 2006&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="ubuntu-lts"&gt;Ubuntu LTS&lt;/h2&gt;&lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th&gt;OS Version&lt;/th&gt;
-&lt;th&gt;OpenSSH Version&lt;/th&gt;
-&lt;th&gt;Library Version&lt;/th&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+  &lt;th&gt;OS Version&lt;/th&gt;
+  &lt;th&gt;OpenSSH Version&lt;/th&gt;
+  &lt;th&gt;Library Version&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;18.04 Bionic&lt;/td&gt;
-&lt;td&gt;7.6p1&lt;/td&gt;
-&lt;td&gt;OpenSSL 1.0.2n 7 Dec 2017&lt;/td&gt;
+  &lt;td&gt;18.04 Bionic&lt;/td&gt;
+  &lt;td&gt;7.6p1&lt;/td&gt;
+  &lt;td&gt;OpenSSL 1.0.2n 7 Dec 2017&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;16.04 Xenial&lt;/td&gt;
-&lt;td&gt;7.2p2&lt;/td&gt;
-&lt;td&gt;OpenSSL 1.0.2g-fips 1 Mar 2016&lt;/td&gt;
+  &lt;td&gt;16.04 Xenial&lt;/td&gt;
+  &lt;td&gt;7.2p2&lt;/td&gt;
+  &lt;td&gt;OpenSSL 1.0.2g-fips 1 Mar 2016&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;14.04 Trusty&lt;/td&gt;
-&lt;td&gt;6.6p1&lt;/td&gt;
-&lt;td&gt;OpenSSL 1.0.1f 6 Jan 2014&lt;/td&gt;
+  &lt;td&gt;14.04 Trusty&lt;/td&gt;
+  &lt;td&gt;6.6p1&lt;/td&gt;
+  &lt;td&gt;OpenSSL 1.0.1f 6 Jan 2014&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;12.04 Precise&lt;/td&gt;
-&lt;td&gt;5.9p1&lt;/td&gt;
-&lt;td&gt;OpenSSL 1.0.1 14 Mar 2012&lt;/td&gt;
+  &lt;td&gt;12.04 Precise&lt;/td&gt;
+  &lt;td&gt;5.9p1&lt;/td&gt;
+  &lt;td&gt;OpenSSL 1.0.1 14 Mar 2012&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;10.04 Lucid&lt;/td&gt;
-&lt;td&gt;5.3p1&lt;/td&gt;
-&lt;td&gt;OpenSSL 0.9.8k 25 Mar 2009&lt;/td&gt;
+  &lt;td&gt;10.04 Lucid&lt;/td&gt;
+  &lt;td&gt;5.3p1&lt;/td&gt;
+  &lt;td&gt;OpenSSL 0.9.8k 25 Mar 2009&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt; 8.04 Hardy&lt;/td&gt;
-&lt;td&gt;4.7p2&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+  &lt;td&gt;8.04 Hardy&lt;/td&gt;
+  &lt;td&gt;4.7p2&lt;/td&gt;
+  &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1627,15 +1638,15 @@ are shown in the top left corner of the graph.&lt;/p&gt;
 the left of zero to maintain its sinister meaning.&lt;/p&gt;
 &lt;p&gt;Probabilties below 0.5% were discarded.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote00_unskilled_pc_vs_average_difficulty.png#vatexttop" alt="Graph: Unskilled PC vs Averge Difficulty" title="Graph: Unskilled PC vs Averge Difficulty"&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote01_unskilled_pc_vs_hard_difficulty.png#vatexttop" alt="Graph: Unskilled PC vs Hard Difficulty" title="Graph: Unskilled PC vs Hard Difficulty"&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote02_unskilled_pc_vs_advesary_npc.png#vatexttop" alt="Graph: Unskilled PC vs Advesary NPC" title="Graph: Unskilled PC vs Advesary NPC"&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote03_talented_pc_vs_average_difficulty.png#vatexttop" alt="Graph: Talented PC vs Average Difficulty" title="Graph: Talented PC vs Average Difficulty"&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote04_talented_pc_vs_hard_difficulty.png#vatexttop" alt="Graph: Talented PC vs Hard Difficulty" title="Graph: Talented PC vs Hard Difficulty"&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote05_talented_pc_vs_advesary.png#vatexttop" alt="Graph: Talented PC vs Advesary NPC" title="Graph: Talented PC vs Advesary NPC"&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote06_pro_pc_vs_average_difficulty.png#vatexttop" alt="Graph: Pro PC vs Average Difficulty" title="Graph: Pro PC vs Averge Difficulty"&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote07_pro_pc_vs_hard_difficulty.png#vatexttop" alt="Graph: Pro PC vs Hard Difficulty" title="Graph: Pro PC vs Hard Difficulty"&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote08_pro_pc_vs_advesary_npc.png#vatexttop" alt="Graph: Pro PC vs Advesary NPC" title="Graph: Pro PC vs Advesary NPC"&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote00_unskilled_pc_vs_average_difficulty.png#vatexttop" alt="Graph: Unskilled PC vs Averge Difficulty" title="Graph: Unskilled PC vs Averge Difficulty" /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote01_unskilled_pc_vs_hard_difficulty.png#vatexttop" alt="Graph: Unskilled PC vs Hard Difficulty" title="Graph: Unskilled PC vs Hard Difficulty" /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote02_unskilled_pc_vs_advesary_npc.png#vatexttop" alt="Graph: Unskilled PC vs Advesary NPC" title="Graph: Unskilled PC vs Advesary NPC" /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote03_talented_pc_vs_average_difficulty.png#vatexttop" alt="Graph: Talented PC vs Average Difficulty" title="Graph: Talented PC vs Average Difficulty" /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote04_talented_pc_vs_hard_difficulty.png#vatexttop" alt="Graph: Talented PC vs Hard Difficulty" title="Graph: Talented PC vs Hard Difficulty" /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote05_talented_pc_vs_advesary.png#vatexttop" alt="Graph: Talented PC vs Advesary NPC" title="Graph: Talented PC vs Advesary NPC" /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote06_pro_pc_vs_average_difficulty.png#vatexttop" alt="Graph: Pro PC vs Average Difficulty" title="Graph: Pro PC vs Averge Difficulty" /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote07_pro_pc_vs_hard_difficulty.png#vatexttop" alt="Graph: Pro PC vs Hard Difficulty" title="Graph: Pro PC vs Hard Difficulty" /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/04/empire-dice/sweote08_pro_pc_vs_advesary_npc.png#vatexttop" alt="Graph: Pro PC vs Advesary NPC" title="Graph: Pro PC vs Advesary NPC" /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </content></entry><entry><title>Troubleshooting collectd / statsd / Graphite</title><link href="https://zehta.me/2014/03/trouble-metrics/" rel="alternate"/><updated>2014-03-31T16:09:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:8ae0c29f-0577-3cbe-bb9d-3696d1ac9372</id><content type="html">&lt;p&gt;Troubleshooting &lt;a href="http://graphite.readthedocs.org/en/latest/"&gt;Graphite&lt;/a&gt; can be a bother. Determining where a
 problem lies requires verification of the data at all of the points of
@@ -1658,9 +1669,9 @@ Ability Score (500,000 rolls per graph and 1,500,000 total rolls). The work was
 inspired by &lt;a href="http://rpg-design.wikidot.com/evaluation"&gt;A Treatise on Different Dice-rolling Mechanics in RPGs&lt;/a&gt;.
 The graphs were created using &lt;a href="https://github.com/TimidRobot/rpgdice"&gt;TimidRobot/rpgdice · GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="graphs"&gt;Graphs&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;img src="/2014/03/dungeon-dice/dw00_success.png#vatexttop" alt="Graph: Chance of Any Success" title="Graph: Chance of Any Success"&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img src="/2014/03/dungeon-dice/dw01_simplified.png#vatexttop" alt="Graph: Simplified Results" title="Graph: Simplified Results"&gt;&lt;/li&gt;
-&lt;li&gt;&lt;img src="/2014/03/dungeon-dice/dw02_raw.png#vatexttop" alt="Graph: Raw Results" title="Graph: Raw Result"&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/03/dungeon-dice/dw00_success.png#vatexttop" alt="Graph: Chance of Any Success" title="Graph: Chance of Any Success" /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/03/dungeon-dice/dw01_simplified.png#vatexttop" alt="Graph: Simplified Results" title="Graph: Simplified Results" /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src="/2014/03/dungeon-dice/dw02_raw.png#vatexttop" alt="Graph: Raw Results" title="Graph: Raw Result" /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="updates"&gt;Updates&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;2014 Apr 01&lt;/code&gt;: updated graph labels&lt;/li&gt;
@@ -1697,7 +1708,8 @@ for me as soon as I wake up or pick up the problem again.&lt;/p&gt;
 Green: The Spectacular Thefts of Apollo Robbins, Pickpocket&lt;/a&gt; (linked
 from &lt;a href="http://www.schneier.com/blog/archives/2013/01/apollo_robbins.html"&gt;Schneier on Security: Apollo Robbins, Pickpocket&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Specifically:&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;"inattentional blindness," the phenomenon of focussing so intently on a
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;inattentional blindness,&amp;quot; the phenomenon of focussing so intently on a
 single task that one fails to notice things in plain sight.&lt;/p&gt;
 &lt;/blockquote&gt;
 </content></entry><entry><title>Mystery Writes</title><link href="https://zehta.me/2012/11/mystery-writes/" rel="alternate"/><updated>2012-11-01T13:28:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:953f43a0-3f1b-3ea5-82f1-d040ac592306</id><content type="html">&lt;p&gt;We recently observed constant write activity on our development server, while
@@ -1731,15 +1743,17 @@ talk about--especially succinctly. A couple of excellent blog posts suggest the
 following definition for Systems Administration: &lt;strong&gt;the automation of networks
 of networks.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Automation:&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;Therefore, SREs spend half their time writing code to eliminate what they do
-the other half of their day. When they "automate themselves out of a job" it
+&lt;blockquote&gt;
+&lt;p&gt;Therefore, SREs spend half their time writing code to eliminate what they do
+the other half of their day. When they &amp;quot;automate themselves out of a job&amp;quot; it
 is cause for celebration and they get to pick a new project. There are
 always more projects.&lt;/p&gt;
 &lt;p&gt;(&lt;a href="http://everythingsysadmin.com/2012/10/whatschangedsre.html"&gt;Everything Sysadmin: Has the job of a Google SRE changed over the
 years?&lt;/a&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Networks of Networks:&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;Findings so far suggest that networks of networks pose risks of catastrophic
+&lt;blockquote&gt;
+&lt;p&gt;Findings so far suggest that networks of networks pose risks of catastrophic
 danger that can exceed the risks in isolated systems. A seemingly benign
 disruption can generate rippling negative effects. Those effects can cost
 millions of dollars, or even billions, when stock markets crash, half of
@@ -1759,9 +1773,10 @@ they simply wasted a few days (given the solution found, I'm confident they
 never let it run more than an hour).&lt;/p&gt;
 &lt;p&gt;Once I got it back from the Apple Store without resolution, I knew it would be
 up to me to isolate the issue. I was inspired by &lt;a href="http://everythingsysadmin.com/2012/09/seniorsysadmins.html"&gt;Everything Sysadmin: What
-makes a sysadmin a "senior sysadmin"?&lt;/a&gt; to proceed methodically.&lt;/p&gt;
+makes a sysadmin a &amp;quot;senior sysadmin&amp;quot;?&lt;/a&gt; to proceed methodically.&lt;/p&gt;
 &lt;p&gt;It paid off:&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;Correct a condition where an incorrect response to a SMART counter will cause
+&lt;blockquote&gt;
+&lt;p&gt;Correct a condition where an incorrect response to a SMART counter will cause
 the m4 drive to become unresponsive after 5184 hours [216 days] of Power-on
 time. The drive will recover after a power cycle, however, this failure will
 repeat once per hour after reaching this point. The condition will allow the
@@ -1775,7 +1790,7 @@ issue!&lt;/p&gt;
 &lt;p&gt;Hopefully, this post will be another signpost for those
 affected.&lt;/p&gt;
 &lt;p&gt;Also, I can't overemphasis this post: &lt;a href="http://everythingsysadmin.com/2012/09/seniorsysadmins.html"&gt;Everything Sysadmin: What makes a
-sysadmin a "senior sysadmin"?&lt;/a&gt;&lt;/p&gt;
+sysadmin a &amp;quot;senior sysadmin&amp;quot;?&lt;/a&gt;&lt;/p&gt;
 </content></entry><entry><title>Linux TCP/IP Tuning</title><link href="https://zehta.me/2012/10/linux-tcp-ip/" rel="alternate"/><updated>2012-10-03T15:32:00Z</updated><author><name>Timid Robot Zehta</name></author><id>urn:uuid:f5fe181f-a948-305f-8e5f-7ef768c19a58</id><content type="html">&lt;p&gt;There is a lot of interesting information in this article and related comments:
 &lt;a href="http://news.ycombinator.com/item?id=4582253"&gt;Linux TCP/IP Tuning | Hacker News&lt;/a&gt;. I look forward to eventually having
 systems that benefit from that granularity of tuning.&lt;/p&gt;
@@ -1792,8 +1807,8 @@ centenary&lt;/a&gt;&lt;/li&gt;
 order.&lt;/p&gt;
 &lt;h2 id="faq"&gt;FAQ&lt;/h2&gt;&lt;h3 id="q-what-do-you-prefer-to-be-called"&gt;Q. What do you prefer to be called?&lt;/h3&gt;&lt;p&gt;Please call me by my nickname (my first and middle name):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Nickname:&lt;/strong&gt; Timid&amp;nbsp;Robot&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Legal Name:&lt;/strong&gt; Timid&amp;nbsp;Robot&amp;nbsp;Zehta&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nickname:&lt;/strong&gt; Timid Robot&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Legal Name:&lt;/strong&gt; Timid Robot Zehta&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Pronouns:&lt;/strong&gt;&lt;ul&gt;
 &lt;li&gt;they/them/theirs&lt;/li&gt;
 &lt;li&gt;she/her/hers&lt;/li&gt;
@@ -1810,17 +1825,17 @@ order.&lt;/p&gt;
 prior to 2012, it was &lt;del&gt;Timothy Robert Baldoni&lt;/del&gt;.&lt;/p&gt;
 &lt;h3 id="q-why-timid"&gt;Q. Why Timid?&lt;/h3&gt;&lt;p&gt;I can be quiet while I observe the world around me. However, I'm not without
 courage. It takes a lot of confidence to exist as myself in this world. Like
-"Little John" from the animated Robin Hood (1973), it's a bit of a joke.&lt;/p&gt;
+&amp;quot;Little John&amp;quot; from the animated Robin Hood (1973), it's a bit of a joke.&lt;/p&gt;
 &lt;p&gt;As someone who currently exists in a large assumed-masculine frame, it is good
 to declare myself as un-violent. It was also very important to disassociate
 myself with a name that professes belief.&lt;/p&gt;
-&lt;h3 id="q-why-robot"&gt;Q. Why Robot?&lt;/h3&gt;&lt;p&gt;I really like it. It fills me with delight--especially as part of "Timid
-Robot". I have a very small amount of regret that I gave up a name that
+&lt;h3 id="q-why-robot"&gt;Q. Why Robot?&lt;/h3&gt;&lt;p&gt;I really like it. It fills me with delight--especially as part of &amp;quot;Timid
+Robot&amp;quot;. I have a very small amount of regret that I gave up a name that
 reflected my germanic heritage, but Robot fits so well. It is non-binary and is
 also a way of me reclaiming the ableism that is too often directed autistics.
 &lt;em&gt;Domo arigato!&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id="q-why-zehta"&gt;Q. Why Zehta?&lt;/h3&gt;&lt;p&gt;It comes from the SI prefix "zetta-", meaning a &lt;em&gt;sex&lt;/em&gt;tillion of something.
-That's a big number. It starts with "Z", making it easy to find my name on
+&lt;h3 id="q-why-zehta"&gt;Q. Why Zehta?&lt;/h3&gt;&lt;p&gt;It comes from the SI prefix &amp;quot;zetta-&amp;quot;, meaning a &lt;em&gt;sex&lt;/em&gt;tillion of something.
+That's a big number. It starts with &amp;quot;Z&amp;quot;, making it easy to find my name on
 lists. It is short and I could secure the domain name. Also see &lt;a href="https://en.wikipedia.org/wiki/Zetta-"&gt;Zetta- -
 Wikipedia&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id="q-you-based-your-selection-of-a-surname-on-available-domain-names"&gt;Q. You based your selection of a surname on available domain names?&lt;/h3&gt;&lt;p&gt;Yes, most of my world is connected to the Internet--most of my favorite things.
@@ -1832,9 +1847,9 @@ resold at a high cost).&lt;/p&gt;
 &lt;/ul&gt;
 </content></entry><entry><title>Reminder</title><link href="https://zehta.me/2002/04/reminder/" rel="alternate"/><updated>2002-04-04T22:22:22Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:650846e8-feff-3f97-826d-924e1e2a74a7</id><content type="html">&lt;p&gt;&lt;strong&gt;Tim Wheeler. &lt;em&gt;Reminder.&lt;/em&gt; 4 April - 11 April 2002&lt;/strong&gt;
 &lt;br&gt;&lt;strong&gt;Steel, 41 x 37 x 16 inches&lt;/strong&gt;
-&lt;br&gt;&lt;strong&gt;North Side of Westlands Building, Sarah Lawrence College&lt;/strong&gt;&lt;br&gt;
-&lt;img src="/2002/04/reminder/side_back_installed.jpg#floatright" alt="Metal skeleton reminder" title="Metal skeleton reminder"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Reminder&lt;/em&gt; is my conference project for "Sculpture: Explorations" with Tishan
+&lt;br&gt;&lt;strong&gt;North Side of Westlands Building, Sarah Lawrence College&lt;/strong&gt;&lt;br /&gt;
+&lt;img src="/2002/04/reminder/side_back_installed.jpg#floatright" alt="Metal skeleton reminder" title="Metal skeleton reminder" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Reminder&lt;/em&gt; is my conference project for &amp;quot;Sculpture: Explorations&amp;quot; with Tishan
 Hsu. It was positioned next to the Peace Pole on the North Side of Westlands,
 the main administrative building at Sarah Lawrence College. I was only able to
 receive permission to install the sculpture for a week. I also handed out and
@@ -1843,11 +1858,12 @@ Perhac and I.&lt;/p&gt;
 &lt;p&gt;I came up with the idea for this piece last Spring while studying in central
 Mexico. It is my attempt to fulfill the promises I have made.&lt;/p&gt;
 &lt;p&gt;One of the the most startling things about traveling in Guatemala was when
-people would tell us, "I don't hate you simply because you are from the U.S...
-I have learned to differentiate." This was told to us by mothers and widows of
+people would tell us, &amp;quot;I don't hate you simply because you are from the U.S...
+I have learned to differentiate.&amp;quot; This was told to us by mothers and widows of
 the Disappeared, ministers, priests and others. I would learn that Guatemala
 has been very heavily scarr ed by US foreign policy.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;Anti-communism and the National Security Doctrine (DSN) formed part of the
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Anti-communism and the National Security Doctrine (DSN) formed part of the
 anti-Soviet strategy of the united States in Latin America. In Guatemala,
 these were first expressed as anti-reformist, then anti-democratic policies,
 culminating in criminal counterinsurgency.&lt;/em&gt; &lt;a href="/2002/04/reminder/#fnote1"&gt;(1)&lt;/a&gt;&lt;/p&gt;
@@ -1872,8 +1888,8 @@ here to talk of neoliberal economics, apathy, globalism, consumerism or dying
 slowly. I only hope that this brief background gives some indication to how
 overwhelming this was for me and members in my group. I didn’t know what to do
 with with my newly realized position as representative of an Oppressor. My
-friends and I asked, "what can we do? What can we possible do to help without
-meddling, to right the wrongs and stop the killings?" They told us to simply
+friends and I asked, &amp;quot;what can we do? What can we possible do to help without
+meddling, to right the wrongs and stop the killings?&amp;quot; They told us to simply
 tell their story—to tell everyone we could the necessity of involvement here in
 the U.S., to ask that our government and our corporations to quit killing in
 our name.&lt;/p&gt;
@@ -1889,15 +1905,15 @@ Publications Year | 1999&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a name="fnote2"&gt;(2)&lt;/a&gt; See &lt;a href="/2002/02/name-tags/"&gt;Name Tags&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 </content></entry><entry><title>Name Tags</title><link href="https://zehta.me/2002/02/name-tags/" rel="alternate"/><updated>2002-02-22T22:22:22Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:78715191-b090-3e9e-8f6e-8caf22b3b47d</id><content type="html">&lt;p&gt;&lt;strong&gt;Tim Wheeler. &lt;em&gt;Name Tags.&lt;/em&gt; 1999 Aug - 2002 Feb&lt;/strong&gt;
-&lt;br&gt;&lt;strong&gt;2 Purchased Plastic Name Tags&lt;/strong&gt;&lt;br&gt;
-&lt;img src="/2002/02/name-tags/nametags.jpg#floatright" alt="Tim Wheeler Name Tags" title="Tim Wheeler Name Tags"&gt;&lt;/p&gt;
+&lt;br&gt;&lt;strong&gt;2 Purchased Plastic Name Tags&lt;/strong&gt;&lt;br /&gt;
+&lt;img src="/2002/02/name-tags/nametags.jpg#floatright" alt="Tim Wheeler Name Tags" title="Tim Wheeler Name Tags" /&gt;&lt;/p&gt;
 &lt;p&gt;These name tags are the objects of a performance piece performed daily over two
 and half years. They not only served as the focal point or medium for
 conversations, but often modified or dictated how people interacted with me.
 They made, me at once, distinct and invisible. They placed me on a specific
 socio-economic plane. They positioned me within the spectrum of service
 industry jobs. They were a symbols for which the most common meaning seemed to
-be "approachable."&lt;/p&gt;
+be &amp;quot;approachable.&amp;quot;&lt;/p&gt;
 &lt;p&gt;The habitual (obsessive?) wearing of the name tags also became the symbols with
 which others mapped my identity. The extent to which people not only defined
 me, but drew some sort of stability from the ritual, was evident on the
@@ -1949,7 +1965,7 @@ We danced as the jazz band played!
 &lt;/code&gt;&lt;/pre&gt;
 </content></entry><entry><title>Will Work for Tuition</title><link href="https://zehta.me/1998/08/will-work-for-tuition/" rel="alternate"/><updated>1998-08-18T22:22:22Z</updated><author><name>Tim Wheeler</name></author><id>urn:uuid:e6174210-1c62-3f25-8d83-5247937efa2b</id><content type="html">&lt;p&gt;&lt;strong&gt;Tim Wheeler. &lt;em&gt;Will Work for Tuition.&lt;/em&gt; 1998 August&lt;/strong&gt;
 &lt;br&gt;&lt;strong&gt;Two hours panhandling with a borrowed briefcase and tie&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="/1998/08/will-work-for-tuition/panhandling.jpg" alt="Panhandling Collage" title="Panhandling Collage"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/1998/08/will-work-for-tuition/panhandling.jpg" alt="Panhandling Collage" title="Panhandling Collage" /&gt;&lt;/p&gt;
 &lt;p&gt;My first dollar made while panhandling outside the Los Angeles courthouse. I
 made a total of $7.00 USD.&lt;/p&gt;
 </content></entry></feed>
