@@ -122,10 +122,6 @@ that contributed to me being able to create and maintain this blog!
       in Rust.
     - [uv][uv]: An extremely fast Python package and project manager, written
       in Rust.
-  - Redirects ([`redirects/`](redirects/))
-    - [tartley/colorama][colorama]: Simple cross-platform colored terminal text
-      in Python
-    - [Jinja — Jinja Documentation (3.0.x)][jinja]
   - CSS / Layout
     - [csstools/normalize.css][normalize]: A cross-browser CSS foundation
     - [Skeleton][skeleton]: Responsive CSS Boilerplate
@@ -149,8 +145,6 @@ that contributed to me being able to create and maintain this blog!
 [read-full]: https://github.com/Andrew-Shay/lektor-read-full-post
 [ruff]: https://docs.astral.sh/ruff/
 [uv]: https://docs.astral.sh/uv/
-[colorama]: https://github.com/tartley/colorama
-[jinja]: https://jinja.palletsprojects.com/en/3.0.x/
 [normalize]: https://github.com/csstools/normalize.css
 [skeleton]: http://getskeleton.com/
 [icons]: https://fontawesome.com/icons?d=gallery&s=brands&m=free
