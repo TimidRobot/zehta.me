@@ -1,6 +1,6 @@
 _model: blog-post
 ---
-title: Isolating SSD Firmware Issue 
+title: Isolating SSD Firmware Issue
 ---
 pub_date: 2012-10-03 16:10
 ---
@@ -49,4 +49,4 @@ sysadmin a "senior sysadmin"?][sysadmin]
 
 [sysadmin]: http://everythingsysadmin.com/2012/09/seniorsysadmins.html
 [firmware]: https://web.archive.org/web/20140917090805/http://forum.crucial.com/t5/Solid-State-Drives-SSD/M4-firmware-0309-is-now-available/td-p/80286
-[macfreeze]: https://web.archive.org/web/20120304043412/http://www.j03l.com/2012/02/mac-freezes-after-hour-crucial-ssd.html 
+[macfreeze]: https://web.archive.org/web/20120304043412/http://www.j03l.com/2012/02/mac-freezes-after-hour-crucial-ssd.html
