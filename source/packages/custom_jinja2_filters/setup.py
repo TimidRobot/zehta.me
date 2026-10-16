@@ -48,8 +48,10 @@ setup(
     ],
     entry_points={
         "lektor.plugins": [
-            "custom-jinja2-filters ="
-            " lektor_custom_jinja2_filters:CustomJinja2FiltersPlugin"
+            (
+                "custom-jinja2-filters ="
+                " lektor_custom_jinja2_filters:CustomJinja2FiltersPlugin"
+            )
         ]
     },
 )
