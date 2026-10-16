@@ -14,7 +14,6 @@ DIR_REPO="$(cd -P -- "${0%/*}" && pwd -P)"
 # https://en.wikipedia.org/wiki/ANSI_escape_code
 E0="$(printf "\e[0m")"        # reset
 E30="$(printf "\e[30m")"      # foreground: black
-E31="$(printf "\e[31m")"      # foreground: red
 E107="$(printf "\e[107m")"    # background: bright white
 
 #### FUNCTIONS ################################################################
