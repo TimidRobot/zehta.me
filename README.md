@@ -18,8 +18,9 @@ The built content is located in [`docs/`](docs/).
 ### Dependencies
 
 1. Install Docker ([Get Docker | Docker Docs][get-docker])
-3. Install shellcheck ([Installing - koalaman/shellcheck][shellcheck-install])
-4. Install uv ([Installation | uv][uv-install])
+2. Install shellcheck ([Installing - koalaman/shellcheck][shellcheck-install])
+3. Install uv ([Installation | uv][uv-install])
+4. Install ruff ([Installing Ruff | Ruff][ruff-install])
 5. Install prek ([Installation - j178/prek][prek-install])
 6. Prepare and install prek Git hooks:
    ```shell
@@ -30,6 +31,7 @@ The built content is located in [`docs/`](docs/).
 [hadolint-install]: https://github.com/hadolint/hadolint#install
 [shellcheck-install]: https://github.com/koalaman/shellcheck#installing
 [uv-install]: https://docs.astral.sh/uv/getting-started/installation/
+[ruff-install]: https://docs.astral.sh/ruff/installation/
 [prek-install]: https://github.com/j178/prek#installation
 
 
