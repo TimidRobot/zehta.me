@@ -15,22 +15,34 @@ The built content is located in [`docs/`](docs/).
 ## Development
 
 
+### Dependencies
+
+1. Install Docker ([Get Docker | Docker Docs][get-docker])
+3. Install shellcheck ([Installing - koalaman/shellcheck][shellcheck-install])
+4. Install uv ([Installation | uv][uv-install])
+5. Install prek ([Installation - j178/prek][prek-install])
+6. Prepare and install prek Git hooks:
+   ```shell
+   prek install --prepare-hooks
+   ```
+
+[get-docker]: https://docs.docker.com/get-started/get-docker/
+[hadolint-install]: https://github.com/hadolint/hadolint#install
+[shellcheck-install]: https://github.com/koalaman/shellcheck#installing
+[uv-install]: https://docs.astral.sh/uv/getting-started/installation/
+[prek-install]: https://github.com/j178/prek#installation
+
+
 ### Docker NGINX and Lektor build
 
 This option serves content more reliably, but rebuilds all content instead of
 only content that has changed.
 
-1. Install [uv][uv]
-    ```shell
-    brew install uv
-    ```
-2. Install [Lektor][lektor] and other Python 3 dependencies via uv
+1. Install [Lektor][lektor] and other Python 3 dependencies via uv
     ```shell
     uv sync --locked
     ```
-3. Install Docker ([Install Docker Engine | Docker
-   Documentation][installdocker])
-4. Run Docker NGINX and Lektor build
+2. Run Docker NGINX and Lektor build
    - Run NGINX webserver via Docker
         ```shell
         docker compose up; docker compose down
@@ -41,9 +53,7 @@ only content that has changed.
         ./build.sh
         ```
 
-[uv]: https://docs.astral.sh/uv/
 [lektor]: https://www.getlektor.com/docs/
-[installdocker]: https://docs.docker.com/engine/install/
 
 
 #### `build.sh` Usage
@@ -66,21 +76,16 @@ Description:
 This option process changes faster (only rebuilding changed content), but also
 injects Lektor admin UX and is slower than NGINX (bad for performance testing).
 
-1. Install [uv][uv]
+1. Install [Lektor][lektor] and other Python 3 dependencies via uv
     ```shell
-    brew install pipenv
+    uv sync --locked
     ```
-2. Install [Lektor][lektor] and other Python 3 dependencies via Pipenv
-    ```shell
-    uv sync --locked 
-    ```
-3. Run Lektor development server
+2. Run Lektor development server
     ```shell
     ./server.sh
     ```
    - access development site at [`127.0.0.1:5000`](http://127.0.0.1:5000/)
 
-[uv]: https://docs.astral.sh/uv/
 [lektor]: https://www.getlektor.com/docs/
 
 
@@ -94,6 +99,7 @@ See [New Website - Timid Robot](https://zehta.me/2019/12/new-website/).
 - [`source/packages/custom-jinja2-filters`][custom-jinja2-filters]
 
 [custom-jinja2-filters]: source/packages/custom-jinja2-filters
+
 
 
 ## Resources
@@ -125,6 +131,8 @@ that contributed to me being able to create and maintain this blog!
   - CSS / Layout
     - [csstools/normalize.css][normalize]: A cross-browser CSS foundation
     - [Skeleton][skeleton]: Responsive CSS Boilerplate
+  - [j178/prek][prek]: ⚡️ A fast Git hook manager written in Rust, designed as
+    a drop-in alternative to pre-commit, reimagined.
   - [Free and Brand Icons | Font Awesome][icons]
 - Guides
   - [Building a static blog with Lektor | Animesh Bulusu][building]
@@ -147,6 +155,7 @@ that contributed to me being able to create and maintain this blog!
 [uv]: https://docs.astral.sh/uv/
 [normalize]: https://github.com/csstools/normalize.css
 [skeleton]: http://getskeleton.com/
+[prek]: https://github.com/j178/prek
 [icons]: https://fontawesome.com/icons?d=gallery&s=brands&m=free
 [building]: https://animesh.blog/building-a-static-blog-with-lektor/
 [closecolors]: https://wismuth.com/webcolors.html

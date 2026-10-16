@@ -1,0 +1,67 @@
+exclude = "^docs/"
+
+
+# meta
+[[repos]]
+# https://prek.j178.dev/reference/configuration/#repo-meta
+# https://pre-commit.com/#meta-hooks
+repo = "meta"
+hooks = [
+  { id = "check-useless-excludes", name = "meta: check-useless-excludes" },
+]
+
+
+# builtin
+[[repos]]
+# https://prek.j178.dev/reference/built-in-hooks/
+repo = "builtin"
+hooks = [
+  # Entries order (ids) based on:
+  # https://prek.j178.dev/reference/built-in-hooks/
+  # Hook opption order based on:
+  # https://prek.j178.dev/reference/configuration/#common-hook-options
+  { id = "trailing-whitespace", name = "builtin: trailing-whitespace" },
+  { id = "check-added-large-files", name = "builtin: check-added-large-files" },
+  { id = "check-case-conflict", name = "builtin: check-case-conflict" },
+  {
+    id = "check-illegal-windows-names",
+    name = "builtin: check-illegal-windows-names",
+   },
+  { id = "end-of-file-fixer", name = "builtin: end-of-file-fixer" },
+  { id = "fix-byte-order-marker", name = "builtin: fix-byte-order-marker" },
+  { id = "forbid-new-submodules", name = "builtin: forbid-new-submodules" },
+  { id = "check-toml", name = "builtin: check-toml" },
+  { id = "check-yaml", name = "builtin: check-yaml" },
+  {
+    id = "deny-filename-pattern",
+    name = "builtin: deny-filename-pattern (spaces)",
+    args = [ "\\s" ],
+  },
+  { id = "check-symlinks", name = "builtin: check-symlinks" },
+  { id = "check-merge-conflict", name = "builtin: check-merge-conflict" },
+  {
+    id = "check-executables-have-shebangs",
+    name = "builtin: check-executables-have-shebangs"
+  },
+]
+
+
+# shellcheck
+# https://github.com/koalaman/shellcheck
+[[repos]]
+repo = "local"
+hooks = [
+  # Hook opption order based on:
+  # https://prek.j178.dev/reference/configuration/#common-hook-options
+  {
+    id = "shellcheck",
+    name = "shellcheck",
+    entry = "shellcheck",
+    language = "system",
+    types = [ "shell" ],
+    description = "Runs shellcheck to lint shell files",
+  },
+]
+
+
+# vim: tabstop=2 shiftwidth=2

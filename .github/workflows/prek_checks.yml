@@ -1,0 +1,30 @@
+name: prek checks
+on: [push, pull_request]
+
+jobs:
+  prek:
+    runs-on: ubuntu-latest
+    steps:
+      - parallel:
+
+        # https://github.com/koalaman/shellcheck
+        - name: Install shellcheck
+          run: |
+            sudo apt-get update
+            sudo apt-get install shellcheck
+
+        # https://github.com/actions/checkout
+        - name: Checkout repository
+          # v7.0.1
+          uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+        # https://github.com/j178/prek-action
+        - name: Install prek
+          # v3.0.1
+          uses: j178/prek-action@1382ad72dea72f9d53832f2bcb65b3e87a947204
+          with:
+            install-only: true
+
+      - name: 'Run prek'
+        run: |
+          prek run --show-diff-on-failure --color=always --all-files
