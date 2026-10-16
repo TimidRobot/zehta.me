@@ -102,14 +102,14 @@ echo
 
 print_header 'Updating CSS SRIs in layout template and published docs'
 # custom.css
-sha512=$(cat docs/static/custom.css | openssl dgst -sha512 -binary \
+sha512=$(openssl dgst -sha512 -binary < docs/static/custom.css \
     | openssl base64 -A)
 grep --fixed-strings --recursive --files-with-matches static/custom.css docs \
     | xargs gsed --regexp-extended \
         -e"s|(/custom[.]css[^\"]+integrity=\")([^\"]+)|\\1sha512-${sha512}|" \
         -i source/templates/layout.html
 # layout.css
-sha512=$(cat docs/static/layout.css | openssl dgst -sha512 -binary \
+sha512=$(openssl dgst -sha512 -binary < docs/static/layout.css \
     | openssl base64 -A)
 grep --fixed-strings --recursive --files-with-matches static/layout.css docs \
     | xargs gsed --regexp-extended \
