@@ -31,9 +31,10 @@ cd "${DIR_REPO}" || exit
 echo
 
 print_header 'Add and commit changes'
-git add docs/ \
-    && git commit -m'publish' docs/ \
-    || true
+if git add docs/
+then
+    git commit -m'publish' docs/ || true
+fi
 echo
 
 print_header 'Push commits'
