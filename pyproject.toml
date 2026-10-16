@@ -30,7 +30,7 @@ skip-magic-trailing-comma = true
 # https://docs.astral.sh/ruff/settings/#lint
 dummy-variable-rgx = "^__?$"
 # Skip specific rules (see `uv run ruff linter`, `uv run ruff rule D200`, etc.)
-ignore = ["COM812", "D200", "D212"]
+ignore = ["COM812", "CPY001", "D200", "D212"]
 select = ["ALL"]
 
 [tool.ruff.lint.flake8-annotations]
