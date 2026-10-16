@@ -25,7 +25,7 @@ print_header 'Generating SRI hashes'
 while IFS= read -r -d '' _file
 do
     printf "%-40s %s\n" "${_file}"  "\"${_file#docs}\""
-    sha512=$(cat "${_file}" | openssl dgst -sha512 -binary | openssl base64 -A)
+    sha512=$(openssl dgst -sha512 -binary < "${_file}" | openssl base64 -A)
     echo "sha512-${sha512}" | tee -a "${_file}.sha512"
     echo
 done < <(find docs -type f \( -iname '*.js' -o -iname '*.css' \) -print0)
